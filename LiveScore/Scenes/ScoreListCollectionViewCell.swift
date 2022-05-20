@@ -21,9 +21,17 @@ class ScoreListCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
+    private lazy var statusLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 6.0, weight: .light)
+        label.textColor = .secondaryLabel
+        
+        return label
+    }()
+    
     private lazy var homeNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 15.0, weight: .semibold)
+        label.font = .systemFont(ofSize: 15.0, weight: .bold)
         label.textColor = .systemRed
         label.numberOfLines = 0
         
@@ -59,6 +67,15 @@ class ScoreListCollectionViewCell: UICollectionViewCell {
         
         homeNameLabel.text = result.homeTeam.name
         homeScoreLabel.text = "\(result.score.fullTime?.homeTeam ?? 0)"
+        
+        if result.status == "FINISHED" {
+            statusLabel.text = result.status
+            statusLabel.textColor = .label
+            statusLabel.font = .systemFont(ofSize: 6.0, weight: .bold)
+        } else {
+            statusLabel.text = result.status
+        }
+        
         awayNameLabel.text = result.awayTeam.name
         awayScoreLabel.text = "\(result.score.fullTime?.awayTeam ?? 0)"
         
@@ -76,12 +93,17 @@ extension ScoreListCollectionViewCell {
         backgroundColor = .systemBackground
         layer.cornerRadius = 12.0
         
-        [imageView, homeNameLabel, homeScoreLabel, awayNameLabel, awayScoreLabel].forEach {
+        [imageView, homeNameLabel, homeScoreLabel, statusLabel, awayNameLabel, awayScoreLabel].forEach {
             addSubview($0)
         }
         
+        statusLabel.snp.makeConstraints {
+            $0.centerX.equalTo(imageView)
+            $0.top.equalTo(imageView.snp.bottom).offset(8.0)
+        }
+        
         imageView.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview().inset(13.0)
             $0.leading.equalToSuperview().inset(8.0)
             $0.height.equalTo(20.0)
             $0.width.equalTo(30.0)

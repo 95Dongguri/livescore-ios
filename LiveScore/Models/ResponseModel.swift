@@ -12,6 +12,7 @@ struct ResponseModel: Decodable {
 }
 
 struct Result: Decodable {
+    let status: String
     var competition: Competition
     var score: Score
     let homeTeam: HomeTeam
