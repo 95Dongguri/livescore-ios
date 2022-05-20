@@ -65,19 +65,32 @@ class ScoreListCollectionViewCell: UICollectionViewCell {
     func setup(result: Result) {
         setupLayout()
         
-        homeNameLabel.text = result.homeTeam.name
-        homeScoreLabel.text = "\(result.score.fullTime?.homeTeam ?? 0)"
-        
         if result.status == "FINISHED" {
             statusLabel.text = result.status
-            statusLabel.textColor = .label
+            statusLabel.textColor = .systemRed
             statusLabel.font = .systemFont(ofSize: 6.0, weight: .bold)
         } else {
             statusLabel.text = result.status
         }
         
+        homeNameLabel.text = result.homeTeam.name
         awayNameLabel.text = result.awayTeam.name
-        awayScoreLabel.text = "\(result.score.fullTime?.awayTeam ?? 0)"
+        
+        let homeScore = result.score.fullTime?.homeTeam ?? 0
+        let awayScore = result.score.fullTime?.awayTeam ?? 0
+        
+        if homeScore > awayScore {
+            homeScoreLabel.text = "\(homeScore)"
+            homeScoreLabel.textColor = .systemRed
+            awayScoreLabel.text = "\(awayScore)"
+        } else if homeScore < awayScore {
+            homeScoreLabel.text = "\(homeScore)"
+            awayScoreLabel.text = "\(awayScore)"
+            awayScoreLabel.textColor = .systemRed
+        } else {
+            homeScoreLabel.text = "\(homeScore)"
+            awayScoreLabel.text = "\(awayScore)"
+        }
         
         guard let imageURL = URL(string: result.competition.area?.ensignUrl ?? "") else { return }
         

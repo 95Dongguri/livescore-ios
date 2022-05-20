@@ -39,9 +39,6 @@ class ScoreViewController: UIViewController {
         super.viewDidLoad()
         
         presenter.viewDidLoad()
-        LiveScoreSearchManager().request { result in
-            print(result)
-        }
     }
 }
 
