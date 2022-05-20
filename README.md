@@ -3,6 +3,7 @@
 ## 프로젝트 설명
 - 당일 축구 경기 스케쥴 표시
 - 메이저 리그만 지원
+- MVP 패턴 사용
 - https://www.football-data.org API 사용
 
 보완할 점..
