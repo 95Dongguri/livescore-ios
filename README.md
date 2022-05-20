@@ -26,4 +26,4 @@
 <img width="349" alt="스크린샷 2022-05-20 오후 6 08 22" src="https://user-images.githubusercontent.com/96865411/169495592-03e7232f-0c8e-4ef5-93ae-1286aad6aab2.png">
 
 ### 두 번째 커밋 (로고 밑 타임라인 추가)
-<img width="312" alt="스크린샷 2022-05-20 오후 6 51 08" src="https://user-images.githubusercontent.com/96865411/169503037-f64c91e0-bcab-47eb-9785-cfb8fbaa74e2.png">
+<img width="312" alt="스크린샷 2022-05-20 오후 6 51 08" src="https://user-images.githubusercontent.com/96865411/169503037-f64c91e0-bcab-47eb-9785-cfb8fbaa74e2.png"><img width="312" alt="스크린샷 2022-05-20 오후 7 21 32" src="https://user-images.githubusercontent.com/96865411/169508220-4e544d4e-1a97-4bd8-8f48-683a4c75e536.png">
