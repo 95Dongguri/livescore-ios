@@ -14,5 +14,5 @@
 3. ...
 
 
-### 첫 번째 사진
+### 첫 번째 커밋
 <img width="349" alt="스크린샷 2022-05-20 오후 6 08 22" src="https://user-images.githubusercontent.com/96865411/169495592-03e7232f-0c8e-4ef5-93ae-1286aad6aab2.png">
