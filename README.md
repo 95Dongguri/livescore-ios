@@ -8,7 +8,7 @@
 - https://www.football-data.org API 사용
 
 보완할 점..
-1. 일부 국가 표기 오류(아예 안뜸)
+1. 일부 국가 표기 오류(아예 안뜸)(해결 완료)
 2. RefreshControl 추가
 3. ...
 
