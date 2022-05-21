@@ -14,7 +14,7 @@ protocol LiveScoreSearchManagerProtocol {
 
 struct LiveScoreSearchManager: LiveScoreSearchManagerProtocol {
     func request(completionHandler: @escaping ([Result]) -> Void) {
-        guard let url = URL(string: "https://api.football-data.org/v2/matches/") else { return }
+        guard let url = URL(string: "https://api.football-data.org/v4/matches/") else { return }
         
         let headers: HTTPHeaders = [
             "X-Auth-Token": "89985cdcf8434ca99272d4e3faf4309c"

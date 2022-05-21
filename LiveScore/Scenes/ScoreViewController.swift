@@ -16,7 +16,7 @@ class ScoreViewController: UIViewController {
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = CGSize(width: view.frame.width - (inset * 2), height: 60.0)
+        layout.estimatedItemSize = CGSize(width: view.frame.width - (inset * 2), height: 80.0)
         layout.sectionInset = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
         layout.minimumLineSpacing = inset
         

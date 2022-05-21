@@ -20,11 +20,7 @@ struct Result: Decodable {
 }
 
 struct Competition: Decodable {
-    let area: Area?
-}
-
-struct Area: Decodable {
-    var ensignUrl: String?
+    let emblem: String?
 }
 
 struct Score: Decodable {
@@ -38,8 +34,10 @@ struct FullTime: Decodable {
 
 struct HomeTeam: Decodable {
     let name: String
+    let crest: String?
 }
 
 struct AwayTeam: Decodable {
     let name: String
+    let crest: String?
 }

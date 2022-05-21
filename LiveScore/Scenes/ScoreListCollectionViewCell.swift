@@ -5,15 +5,16 @@
 //  Created by 김동혁 on 2022/05/20.
 //
 
-import UIKit
+import Kingfisher
 import SnapKit
-import SVGKit
+import UIKit
+
 
 class ScoreListCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "ScoreListCollectionViewCell"
     
-    private lazy var imageView: UIImageView = {
+    private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
@@ -23,8 +24,8 @@ class ScoreListCollectionViewCell: UICollectionViewCell {
     
     private lazy var statusLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 6.0, weight: .light)
-        label.textColor = .secondaryLabel
+        label.font = .systemFont(ofSize: 10.0, weight: .light)
+        label.textColor = .label
         
         return label
     }()
@@ -65,14 +66,11 @@ class ScoreListCollectionViewCell: UICollectionViewCell {
     func setup(result: Result) {
         setupLayout()
         
-        if result.status == "FINISHED" {
-            statusLabel.text = result.status
-            statusLabel.textColor = .systemRed
-            statusLabel.font = .systemFont(ofSize: 6.0, weight: .bold)
-        } else {
-            statusLabel.text = result.status
-        }
+        guard let imageURL = URL(string: result.competition.emblem ?? "") else { return }
         
+        logoImageView.kf.setImage(with: imageURL)
+        
+        statusLabel.text = result.status
         homeNameLabel.text = result.homeTeam.name
         awayNameLabel.text = result.awayTeam.name
         
@@ -92,12 +90,11 @@ class ScoreListCollectionViewCell: UICollectionViewCell {
             awayScoreLabel.text = "\(awayScore)"
         }
         
-        guard let imageURL = URL(string: result.competition.area?.ensignUrl ?? "") else { return }
         
-        let data = try? Data(contentsOf: imageURL)
-        let logo = SVGKImage(data: data)
-        
-        imageView.image = logo?.uiImage
+//        let data = try? Data(contentsOf: imageURL)
+//        let logo = SVGKImage(data: data)
+//
+//        logoImageView.image = logo?.uiImage
     }
 }
 
@@ -106,34 +103,34 @@ extension ScoreListCollectionViewCell {
         backgroundColor = .systemBackground
         layer.cornerRadius = 12.0
         
-        [imageView, homeNameLabel, homeScoreLabel, statusLabel, awayNameLabel, awayScoreLabel].forEach {
+        [logoImageView, homeNameLabel, homeScoreLabel, statusLabel, awayNameLabel, awayScoreLabel].forEach {
             addSubview($0)
         }
         
         statusLabel.snp.makeConstraints {
-            $0.centerX.equalTo(imageView)
-            $0.top.equalTo(imageView.snp.bottom).offset(8.0)
+            $0.centerX.equalTo(logoImageView)
+            $0.top.equalTo(logoImageView.snp.bottom).offset(3.0)
         }
         
-        imageView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(13.0)
+        logoImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(10.0)
             $0.leading.equalToSuperview().inset(8.0)
-            $0.height.equalTo(20.0)
-            $0.width.equalTo(30.0)
+            $0.height.equalTo(50.0)
+            $0.width.equalTo(50.0)
         }
         
         homeNameLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(8.0)
-            $0.leading.equalTo(imageView.snp.trailing).offset(5.0)
+            $0.top.equalToSuperview().inset(12.0)
+            $0.leading.equalTo(logoImageView.snp.trailing).offset(5.0)
         }
         
         homeScoreLabel.snp.makeConstraints {
             $0.top.equalTo(homeNameLabel.snp.top)
-            $0.trailing.equalToSuperview().inset(8.0)
+            $0.trailing.equalToSuperview().inset(16.0)
         }
         
         awayNameLabel.snp.makeConstraints {
-            $0.bottom.equalToSuperview().inset(8.0)
+            $0.bottom.equalToSuperview().inset(12.0)
             $0.leading.equalTo(homeNameLabel.snp.leading)
         }
         
