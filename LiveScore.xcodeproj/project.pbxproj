@@ -7,24 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71599C10D2747E1B9DDF793C /* Pods_LiveScoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D108A755C4431306D1812CAC /* Pods_LiveScoreTests.framework */; };
+		CD95485948949969F79F1FF1 /* Pods_LiveScore_LiveScoreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D36D91837817769482FFA9 /* Pods_LiveScore_LiveScoreUITests.framework */; };
 		CE15B4172834FDB60003CC47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B4162834FDB60003CC47 /* AppDelegate.swift */; };
 		CE15B4192834FDB60003CC47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B4182834FDB60003CC47 /* SceneDelegate.swift */; };
-		CE15B41B2834FDB60003CC47 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B41A2834FDB60003CC47 /* ScoreViewController.swift */; };
+		CE15B41B2834FDB60003CC47 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B41A2834FDB60003CC47 /* LiveViewController.swift */; };
 		CE15B4202834FDB70003CC47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE15B41F2834FDB70003CC47 /* Assets.xcassets */; };
 		CE15B4232834FDB70003CC47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE15B4212834FDB70003CC47 /* LaunchScreen.storyboard */; };
 		CE15B42E2834FDB70003CC47 /* LiveScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B42D2834FDB70003CC47 /* LiveScoreTests.swift */; };
 		CE15B4382834FDB70003CC47 /* LiveScoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B4372834FDB70003CC47 /* LiveScoreUITests.swift */; };
 		CE15B43A2834FDB70003CC47 /* LiveScoreUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B4392834FDB70003CC47 /* LiveScoreUITestsLaunchTests.swift */; };
-		CE15B4472834FE6A0003CC47 /* ScorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B4462834FE6A0003CC47 /* ScorePresenter.swift */; };
+		CE15B4472834FE6A0003CC47 /* LivePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B4462834FE6A0003CC47 /* LivePresenter.swift */; };
 		CE15B44A2834FE7F0003CC47 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE15B4492834FE7F0003CC47 /* SnapKit */; };
 		CE15B44D2834FE8A0003CC47 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE15B44C2834FE8A0003CC47 /* Alamofire */; };
+		CE1E79882838CFED0041B7A7 /* ScorersListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E79872838CFED0041B7A7 /* ScorersListCollectionViewCell.swift */; };
 		CE288D2D28387E84002A39A3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CE288D2C28387E84002A39A3 /* Kingfisher */; };
 		CE288D3128389111002A39A3 /* LiveRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D3028389111002A39A3 /* LiveRequestModel.swift */; };
-		CE2F921E28377CC2007531ED /* ScoreListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F921D28377CC2007531ED /* ScoreListCollectionViewCell.swift */; };
+		CE288D362838B248002A39A3 /* ScoreResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D352838B248002A39A3 /* ScoreResponseModel.swift */; };
+		CE288D3B2838B46F002A39A3 /* ScorersSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D3A2838B46F002A39A3 /* ScorersSearchManager.swift */; };
+		CE288D402838C2A8002A39A3 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D3F2838C2A8002A39A3 /* TabBarItem.swift */; };
+		CE288D422838C2E9002A39A3 /* ScorersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D412838C2E9002A39A3 /* ScorersViewController.swift */; };
+		CE288D452838C432002A39A3 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D442838C432002A39A3 /* TabBarViewController.swift */; };
+		CE288D472838C487002A39A3 /* ScorersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D462838C487002A39A3 /* ScorersPresenter.swift */; };
+		CE288D492838C80D002A39A3 /* ScorersListTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D482838C80D002A39A3 /* ScorersListTableViewHeaderView.swift */; };
+		CE2F921E28377CC2007531ED /* LiveListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F921D28377CC2007531ED /* LiveListCollectionViewCell.swift */; };
 		CE2F9221283788CD007531ED /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE2F9220283788CD007531ED /* SVGKit */; };
 		CE2F9223283788CD007531ED /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE2F9222283788CD007531ED /* SVGKitSwift */; };
 		CED880C428364A6C0065600E /* LiveResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED880C328364A6C0065600E /* LiveResponseModel.swift */; };
 		CED880C6283653180065600E /* LiveScoreSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED880C5283653180065600E /* LiveScoreSearchManager.swift */; };
+		DDD3D44CC414CC6C13F590C5 /* Pods_LiveScore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94148FCA5DA357158A50C97 /* Pods_LiveScore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +56,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		54E4454D20941A323B2FC643 /* Pods-LiveScoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveScoreTests.release.xcconfig"; path = "Target Support Files/Pods-LiveScoreTests/Pods-LiveScoreTests.release.xcconfig"; sourceTree = "<group>"; };
+		5619D82A4502C81EB397CEDD /* Pods-LiveScore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveScore.release.xcconfig"; path = "Target Support Files/Pods-LiveScore/Pods-LiveScore.release.xcconfig"; sourceTree = "<group>"; };
+		56D36D91837817769482FFA9 /* Pods_LiveScore_LiveScoreUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiveScore_LiveScoreUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF2B865C3AFFF6CB0D4B6A37 /* Pods-LiveScore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveScore.debug.xcconfig"; path = "Target Support Files/Pods-LiveScore/Pods-LiveScore.debug.xcconfig"; sourceTree = "<group>"; };
 		CE15B4132834FDB60003CC47 /* LiveScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE15B4162834FDB60003CC47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE15B4182834FDB60003CC47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE15B41A2834FDB60003CC47 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		CE15B41A2834FDB60003CC47 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		CE15B41F2834FDB70003CC47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE15B4222834FDB70003CC47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE15B4242834FDB70003CC47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,11 +72,24 @@
 		CE15B4332834FDB70003CC47 /* LiveScoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveScoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE15B4372834FDB70003CC47 /* LiveScoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreUITests.swift; sourceTree = "<group>"; };
 		CE15B4392834FDB70003CC47 /* LiveScoreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		CE15B4462834FE6A0003CC47 /* ScorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePresenter.swift; sourceTree = "<group>"; };
+		CE15B4462834FE6A0003CC47 /* LivePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePresenter.swift; sourceTree = "<group>"; };
+		CE1E79872838CFED0041B7A7 /* ScorersListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorersListCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE288D3028389111002A39A3 /* LiveRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRequestModel.swift; sourceTree = "<group>"; };
-		CE2F921D28377CC2007531ED /* ScoreListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreListCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE288D352838B248002A39A3 /* ScoreResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreResponseModel.swift; sourceTree = "<group>"; };
+		CE288D3A2838B46F002A39A3 /* ScorersSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorersSearchManager.swift; sourceTree = "<group>"; };
+		CE288D3F2838C2A8002A39A3 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		CE288D412838C2E9002A39A3 /* ScorersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorersViewController.swift; sourceTree = "<group>"; };
+		CE288D442838C432002A39A3 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		CE288D462838C487002A39A3 /* ScorersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorersPresenter.swift; sourceTree = "<group>"; };
+		CE288D482838C80D002A39A3 /* ScorersListTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorersListTableViewHeaderView.swift; sourceTree = "<group>"; };
+		CE2F921D28377CC2007531ED /* LiveListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveListCollectionViewCell.swift; sourceTree = "<group>"; };
 		CED880C328364A6C0065600E /* LiveResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveResponseModel.swift; sourceTree = "<group>"; };
 		CED880C5283653180065600E /* LiveScoreSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreSearchManager.swift; sourceTree = "<group>"; };
+		CF90AC35FBE0A8864404875F /* Pods-LiveScoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveScoreTests.debug.xcconfig"; path = "Target Support Files/Pods-LiveScoreTests/Pods-LiveScoreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D108A755C4431306D1812CAC /* Pods_LiveScoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiveScoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4E0376D0936090821C6688B /* Pods-LiveScore-LiveScoreUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveScore-LiveScoreUITests.release.xcconfig"; path = "Target Support Files/Pods-LiveScore-LiveScoreUITests/Pods-LiveScore-LiveScoreUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F94148FCA5DA357158A50C97 /* Pods_LiveScore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiveScore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FED03E35226A9A58B1FB0D64 /* Pods-LiveScore-LiveScoreUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveScore-LiveScoreUITests.debug.xcconfig"; path = "Target Support Files/Pods-LiveScore-LiveScoreUITests/Pods-LiveScore-LiveScoreUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +102,7 @@
 				CE2F9221283788CD007531ED /* SVGKit in Frameworks */,
 				CE15B44D2834FE8A0003CC47 /* Alamofire in Frameworks */,
 				CE288D2D28387E84002A39A3 /* Kingfisher in Frameworks */,
+				DDD3D44CC414CC6C13F590C5 /* Pods_LiveScore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71599C10D2747E1B9DDF793C /* Pods_LiveScoreTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,12 +118,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD95485948949969F79F1FF1 /* Pods_LiveScore_LiveScoreUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78A1F46D3033CA21CD2DDBC6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF2B865C3AFFF6CB0D4B6A37 /* Pods-LiveScore.debug.xcconfig */,
+				5619D82A4502C81EB397CEDD /* Pods-LiveScore.release.xcconfig */,
+				FED03E35226A9A58B1FB0D64 /* Pods-LiveScore-LiveScoreUITests.debug.xcconfig */,
+				F4E0376D0936090821C6688B /* Pods-LiveScore-LiveScoreUITests.release.xcconfig */,
+				CF90AC35FBE0A8864404875F /* Pods-LiveScoreTests.debug.xcconfig */,
+				54E4454D20941A323B2FC643 /* Pods-LiveScoreTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BA51AF9131FC5F97D3C454F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F94148FCA5DA357158A50C97 /* Pods_LiveScore.framework */,
+				56D36D91837817769482FFA9 /* Pods_LiveScore_LiveScoreUITests.framework */,
+				D108A755C4431306D1812CAC /* Pods_LiveScoreTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE15B40A2834FDB60003CC47 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +155,8 @@
 				CE15B42C2834FDB70003CC47 /* LiveScoreTests */,
 				CE15B4362834FDB70003CC47 /* LiveScoreUITests */,
 				CE15B4142834FDB60003CC47 /* Products */,
+				78A1F46D3033CA21CD2DDBC6 /* Pods */,
+				BA51AF9131FC5F97D3C454F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,34 +205,65 @@
 		CE15B4512834FE9C0003CC47 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CE288D332838AFE3002A39A3 /* Score */,
-				CE288D322838AFD9002A39A3 /* Cells */,
+				CE288D442838C432002A39A3 /* TabBarViewController.swift */,
+				CE288D432838C333002A39A3 /* Scorers */,
+				CE288D332838AFE3002A39A3 /* Live */,
+				CE288D322838AFD9002A39A3 /* Header & Cell */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		CE288D322838AFD9002A39A3 /* Cells */ = {
+		CE288D322838AFD9002A39A3 /* Header & Cell */ = {
 			isa = PBXGroup;
 			children = (
-				CE2F921D28377CC2007531ED /* ScoreListCollectionViewCell.swift */,
+				CE2F921D28377CC2007531ED /* LiveListCollectionViewCell.swift */,
+				CE1E79872838CFED0041B7A7 /* ScorersListCollectionViewCell.swift */,
+				CE288D482838C80D002A39A3 /* ScorersListTableViewHeaderView.swift */,
 			);
-			path = Cells;
+			path = "Header & Cell";
 			sourceTree = "<group>";
 		};
-		CE288D332838AFE3002A39A3 /* Score */ = {
+		CE288D332838AFE3002A39A3 /* Live */ = {
 			isa = PBXGroup;
 			children = (
-				CE15B41A2834FDB60003CC47 /* ScoreViewController.swift */,
-				CE15B4462834FE6A0003CC47 /* ScorePresenter.swift */,
+				CE15B41A2834FDB60003CC47 /* LiveViewController.swift */,
+				CE15B4462834FE6A0003CC47 /* LivePresenter.swift */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		CE288D342838B23B002A39A3 /* LiveScore */ = {
+			isa = PBXGroup;
+			children = (
+				CED880C328364A6C0065600E /* LiveResponseModel.swift */,
+				CE288D3028389111002A39A3 /* LiveRequestModel.swift */,
+			);
+			path = LiveScore;
+			sourceTree = "<group>";
+		};
+		CE288D392838B25D002A39A3 /* Score */ = {
+			isa = PBXGroup;
+			children = (
+				CE288D352838B248002A39A3 /* ScoreResponseModel.swift */,
 			);
 			path = Score;
+			sourceTree = "<group>";
+		};
+		CE288D432838C333002A39A3 /* Scorers */ = {
+			isa = PBXGroup;
+			children = (
+				CE288D412838C2E9002A39A3 /* ScorersViewController.swift */,
+				CE288D462838C487002A39A3 /* ScorersPresenter.swift */,
+			);
+			path = Scorers;
 			sourceTree = "<group>";
 		};
 		CED880C028364A530065600E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CED880C328364A6C0065600E /* LiveResponseModel.swift */,
-				CE288D3028389111002A39A3 /* LiveRequestModel.swift */,
+				CE288D3F2838C2A8002A39A3 /* TabBarItem.swift */,
+				CE288D342838B23B002A39A3 /* LiveScore */,
+				CE288D392838B25D002A39A3 /* Score */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				CED880C5283653180065600E /* LiveScoreSearchManager.swift */,
+				CE288D3A2838B46F002A39A3 /* ScorersSearchManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -196,9 +284,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE15B43D2834FDB70003CC47 /* Build configuration list for PBXNativeTarget "LiveScore" */;
 			buildPhases = (
+				D2445B924CD992AB903B5C11 /* [CP] Check Pods Manifest.lock */,
 				CE15B40F2834FDB60003CC47 /* Sources */,
 				CE15B4102834FDB60003CC47 /* Frameworks */,
 				CE15B4112834FDB60003CC47 /* Resources */,
+				32255E463D898EF6FD641EF0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,6 +310,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE15B4402834FDB70003CC47 /* Build configuration list for PBXNativeTarget "LiveScoreTests" */;
 			buildPhases = (
+				4C561109C24E75DFAB47544A /* [CP] Check Pods Manifest.lock */,
 				CE15B4252834FDB70003CC47 /* Sources */,
 				CE15B4262834FDB70003CC47 /* Frameworks */,
 				CE15B4272834FDB70003CC47 /* Resources */,
@@ -238,9 +329,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE15B4432834FDB70003CC47 /* Build configuration list for PBXNativeTarget "LiveScoreUITests" */;
 			buildPhases = (
+				D206140BE61CA30025362B22 /* [CP] Check Pods Manifest.lock */,
 				CE15B42F2834FDB70003CC47 /* Sources */,
 				CE15B4302834FDB70003CC47 /* Frameworks */,
 				CE15B4312834FDB70003CC47 /* Resources */,
+				5FC6DF2A95DE335A2D236E2D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -327,19 +420,130 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		32255E463D898EF6FD641EF0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LiveScore/Pods-LiveScore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LiveScore/Pods-LiveScore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LiveScore/Pods-LiveScore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C561109C24E75DFAB47544A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LiveScoreTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FC6DF2A95DE335A2D236E2D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LiveScore-LiveScoreUITests/Pods-LiveScore-LiveScoreUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LiveScore-LiveScoreUITests/Pods-LiveScore-LiveScoreUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LiveScore-LiveScoreUITests/Pods-LiveScore-LiveScoreUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D206140BE61CA30025362B22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LiveScore-LiveScoreUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2445B924CD992AB903B5C11 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LiveScore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE15B40F2834FDB60003CC47 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CED880C6283653180065600E /* LiveScoreSearchManager.swift in Sources */,
-				CE2F921E28377CC2007531ED /* ScoreListCollectionViewCell.swift in Sources */,
-				CE15B41B2834FDB60003CC47 /* ScoreViewController.swift in Sources */,
+				CE2F921E28377CC2007531ED /* LiveListCollectionViewCell.swift in Sources */,
+				CE1E79882838CFED0041B7A7 /* ScorersListCollectionViewCell.swift in Sources */,
+				CE288D362838B248002A39A3 /* ScoreResponseModel.swift in Sources */,
+				CE15B41B2834FDB60003CC47 /* LiveViewController.swift in Sources */,
+				CE288D472838C487002A39A3 /* ScorersPresenter.swift in Sources */,
+				CE288D492838C80D002A39A3 /* ScorersListTableViewHeaderView.swift in Sources */,
+				CE288D402838C2A8002A39A3 /* TabBarItem.swift in Sources */,
 				CE15B4172834FDB60003CC47 /* AppDelegate.swift in Sources */,
+				CE288D422838C2E9002A39A3 /* ScorersViewController.swift in Sources */,
 				CE15B4192834FDB60003CC47 /* SceneDelegate.swift in Sources */,
 				CED880C428364A6C0065600E /* LiveResponseModel.swift in Sources */,
-				CE15B4472834FE6A0003CC47 /* ScorePresenter.swift in Sources */,
+				CE15B4472834FE6A0003CC47 /* LivePresenter.swift in Sources */,
+				CE288D452838C432002A39A3 /* TabBarViewController.swift in Sources */,
 				CE288D3128389111002A39A3 /* LiveRequestModel.swift in Sources */,
+				CE288D3B2838B46F002A39A3 /* ScorersSearchManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +707,7 @@
 		};
 		CE15B43E2834FDB70003CC47 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF2B865C3AFFF6CB0D4B6A37 /* Pods-LiveScore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -530,6 +735,7 @@
 		};
 		CE15B43F2834FDB70003CC47 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5619D82A4502C81EB397CEDD /* Pods-LiveScore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -557,6 +763,7 @@
 		};
 		CE15B4412834FDB70003CC47 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF90AC35FBE0A8864404875F /* Pods-LiveScoreTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -577,6 +784,7 @@
 		};
 		CE15B4422834FDB70003CC47 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54E4454D20941A323B2FC643 /* Pods-LiveScoreTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -597,6 +805,7 @@
 		};
 		CE15B4442834FDB70003CC47 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FED03E35226A9A58B1FB0D64 /* Pods-LiveScore-LiveScoreUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -615,6 +824,7 @@
 		};
 		CE15B4452834FDB70003CC47 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4E0376D0936090821C6688B /* Pods-LiveScore-LiveScoreUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

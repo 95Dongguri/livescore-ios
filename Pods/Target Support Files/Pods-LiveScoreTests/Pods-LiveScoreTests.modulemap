@@ -1,0 +1,6 @@
+framework module Pods_LiveScoreTests {
+  umbrella header "Pods-LiveScoreTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

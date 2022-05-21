@@ -5,8 +5,8 @@
 //  Created by 김동혁 on 2022/05/19.
 //
 
-import Foundation
 import Alamofire
+import Foundation
 
 protocol LiveScoreSearchManagerProtocol {
     func request(from dateFrom: String, completionHandler: @escaping ([Result]) -> Void)

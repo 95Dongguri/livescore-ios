@@ -1,5 +1,5 @@
 //
-//  ScoreListCollectionViewCell.swift
+//  LiveListCollectionViewCell.swift
 //  LiveScore
 //
 //  Created by 김동혁 on 2022/05/20.
@@ -11,7 +11,7 @@ import SVGKit
 import UIKit
 
 
-class ScoreListCollectionViewCell: UICollectionViewCell {
+class LiveListCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "ScoreListCollectionViewCell"
     
@@ -102,7 +102,7 @@ class ScoreListCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension ScoreListCollectionViewCell {
+extension LiveListCollectionViewCell {
     func setupLayout() {
         backgroundColor = .systemBackground
         layer.cornerRadius = 12.0

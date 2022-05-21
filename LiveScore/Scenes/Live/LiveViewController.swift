@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 
-class ScoreViewController: UIViewController {
+class LiveViewController: UIViewController {
     
-    private lazy var presenter = ScorePresenter(vc: self)
+    private lazy var presenter = LivePresenter(vc: self)
     
     private let inset: CGFloat = 16.0
     
@@ -22,7 +22,7 @@ class ScoreViewController: UIViewController {
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .secondarySystemBackground
-        collectionView.register(ScoreListCollectionViewCell.self, forCellWithReuseIdentifier: ScoreListCollectionViewCell.identifier)
+        collectionView.register(LiveListCollectionViewCell.self, forCellWithReuseIdentifier: LiveListCollectionViewCell.identifier)
         
         collectionView.dataSource = presenter
         
@@ -36,14 +36,14 @@ class ScoreViewController: UIViewController {
     }
 }
 
-extension ScoreViewController: ScoreProtocol {
+extension LiveViewController: LiveProtocol {
     func setupNavigationTitle() {
         navigationItem.title = "TODAY'S MATCH!!!"
     }
     
     func setupViews() {
         let searchController = UISearchController()
-        searchController.searchBar.placeholder = "검색하실 날짜를 입력해주세요. (yyyy-MM-dd)"
+        searchController.searchBar.placeholder = "날짜를 입력해주세요. (yyyy-MM-dd)"
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = presenter
 
@@ -52,7 +52,7 @@ extension ScoreViewController: ScoreProtocol {
         view.addSubview(collectionView)
         
         collectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
