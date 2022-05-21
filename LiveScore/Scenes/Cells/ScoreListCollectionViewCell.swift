@@ -7,6 +7,7 @@
 
 import Kingfisher
 import SnapKit
+import SVGKit
 import UIKit
 
 
@@ -74,22 +75,25 @@ class ScoreListCollectionViewCell: UICollectionViewCell {
         homeNameLabel.text = result.homeTeam.name
         awayNameLabel.text = result.awayTeam.name
         
-        let homeScore = result.score.fullTime?.homeTeam ?? 0
-        let awayScore = result.score.fullTime?.awayTeam ?? 0
+        let homeScore = result.score.fullTime?.home ?? 0
+        let awayScore = result.score.fullTime?.away ?? 0
         
         if homeScore > awayScore {
             homeScoreLabel.text = "\(homeScore)"
             homeScoreLabel.textColor = .systemRed
             awayScoreLabel.text = "\(awayScore)"
+            awayScoreLabel.textColor = .label
         } else if homeScore < awayScore {
             homeScoreLabel.text = "\(homeScore)"
+            homeScoreLabel.textColor = .label
             awayScoreLabel.text = "\(awayScore)"
             awayScoreLabel.textColor = .systemRed
         } else {
             homeScoreLabel.text = "\(homeScore)"
             awayScoreLabel.text = "\(awayScore)"
+            homeScoreLabel.textColor = .label
+            awayScoreLabel.textColor = .label
         }
-        
         
 //        let data = try? Data(contentsOf: imageURL)
 //        let logo = SVGKImage(data: data)

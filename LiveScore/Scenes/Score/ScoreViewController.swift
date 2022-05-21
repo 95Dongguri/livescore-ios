@@ -29,12 +29,6 @@ class ScoreViewController: UIViewController {
         return collectionView
     }()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        presenter.viewWillAppear()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,12 +42,12 @@ extension ScoreViewController: ScoreProtocol {
     }
     
     func setupViews() {
-//        let searchController = UISearchController()
-//        searchController.searchBar.placeholder = "좋아하는 리그를 검색해주세요."
-//        searchController.obscuresBackgroundDuringPresentation = false
-//        searchController.searchBar.delegate = presenter
-//
-//        navigationItem.searchController = searchController
+        let searchController = UISearchController()
+        searchController.searchBar.placeholder = "검색하실 날짜를 입력해주세요. (yyyy-MM-dd)"
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = presenter
+
+        navigationItem.searchController = searchController
         
         view.addSubview(collectionView)
         

@@ -18,6 +18,8 @@ class ScorePresenter: NSObject {
     private weak var vc: ScoreProtocol?
     private let liveScoreSearchManager: LiveScoreSearchManagerProtocol
 
+    private var dateFrom = ""
+    
     private var resultList: [Result] = []
     
     init(vc: ScoreProtocol, liveScoreSearchManager: LiveScoreSearchManagerProtocol = LiveScoreSearchManager()) {
@@ -28,10 +30,6 @@ class ScorePresenter: NSObject {
     func viewDidLoad() {
         vc?.setupNavigationTitle()
         vc?.setupViews()
-    }
-    
-    func viewWillAppear() {
-        requestResultList()
     }
 }
 
@@ -50,13 +48,12 @@ extension ScorePresenter: UICollectionViewDataSource {
     }
 }
 
-//extension ScorePresenter: UISearchBarDelegate {
-//
-//}
-
-private extension ScorePresenter {
-    func requestResultList() {
-        liveScoreSearchManager.request { [weak self] newValue in
+extension ScorePresenter: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        resultList = []
+        guard let searchDate = searchBar.text else { return }
+        
+        liveScoreSearchManager.request(from: searchDate) { [weak self] newValue in
             self?.resultList += newValue
             self?.vc?.reloadCollectionView()
         }
