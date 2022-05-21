@@ -8,12 +8,13 @@
 - https://www.football-data.org API 사용
 
 보완할 점..
-1. 일부 국가 표기 오류(아예 안뜸)
+1. 일부 국가 표기 오류(아예 안뜸)(해결 완료)
 2. RefreshControl 추가
-3. ...
+3. 경기 데이터가 많을 때 스크롤이 느림.. (이미지불러오는 문제같음)(비동기로 해봐도 느림)
+4. ...
 
 해결한 점..
-1. .svg 이미지 표시 안되는거 해결 (SVGKIT 활용)
+1. .svg 이미지 표시 안되는거 (해결 완료)(SVGKIT 활용)
 2. ...
 
 더 하고 싶은 것..
@@ -26,4 +27,4 @@
 <img width="349" alt="스크린샷 2022-05-20 오후 6 08 22" src="https://user-images.githubusercontent.com/96865411/169495592-03e7232f-0c8e-4ef5-93ae-1286aad6aab2.png">
 
 ### 두 번째 커밋 (로고 밑 타임라인 추가)
-<img width="312" alt="스크린샷 2022-05-20 오후 6 51 08" src="https://user-images.githubusercontent.com/96865411/169503037-f64c91e0-bcab-47eb-9785-cfb8fbaa74e2.png">
+<img width="312" alt="스크린샷 2022-05-20 오후 6 51 08" src="https://user-images.githubusercontent.com/96865411/169503037-f64c91e0-bcab-47eb-9785-cfb8fbaa74e2.png"><img width="312" alt="스크린샷 2022-05-20 오후 7 21 32" src="https://user-images.githubusercontent.com/96865411/169508220-4e544d4e-1a97-4bd8-8f48-683a4c75e536.png">
