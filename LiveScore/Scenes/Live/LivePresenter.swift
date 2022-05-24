@@ -53,7 +53,8 @@ extension LivePresenter: UISearchBarDelegate {
         resultList = []
         vc?.reloadCollectionView()
         
-        guard let searchDate = searchBar.text else { return }
+        guard let searchDate = searchBar.text?.replacingOccurrences(of: "/", with: "-")
+            .replacingOccurrences(of: ".", with: "-") else { return }
         
         liveScoreSearchManager.request(from: searchDate) { [weak self] newValue in
             self?.resultList += newValue
