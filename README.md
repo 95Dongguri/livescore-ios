@@ -29,6 +29,4 @@
 4. ...
 
 ### 화면 구성
-![Simulator Screen Shot - iPhone 13 Pro Max - 2022-05-24 at 18 03 16](https://user-images.githubusercontent.com/96865411/169994656-a81ecf86-dce5-467d-9351-a491b55b72a5.png)![Simulator Screen Shot - iPhone 13 Pro Max - 2022-05-24 at 18 03 27](https://user-images.githubusercontent.com/96865411/169994671-0dc940b6-3681-4bbe-963c-9a10b1d3b1e1.png)![Simulator Screen Shot - iPhone 13 Pro Max - 2022-05-24 at 18 03 30](https://user-images.githubusercontent.com/96865411/169994680-8e91a5d8-d76d-47c2-a730-b8f223f0ca9b.png)
-
-
+![Simulator Screen Shot - iPhone 13 Pro Max - 2022-05-24 at 18 03 16](https://user-images.githubusercontent.com/96865411/169995344-3c81cb28-90ce-40e7-a57d-2355e466fe5d.png)![Simulator Screen Shot - iPhone 13 Pro Max - 2022-05-24 at 18 03 27](https://user-images.githubusercontent.com/96865411/169995384-3ad63f05-566f-48da-87fd-cda2385f7bc3.png)![Simulator Screen Shot - iPhone 13 Pro Max - 2022-05-24 at 18 03 30](https://user-images.githubusercontent.com/96865411/169995412-27b721c2-f75b-4a5e-bdaa-99b2fd8f81bf.png)
