@@ -27,3 +27,8 @@
 2. 리그 검색하여 득점순위 10위까지 보여주는 뷰 -> 해당 선수 세부정보 (완료)
 3. 팀 상세 스텟 뷰 하나 더 만들고 싶음 (해당 팀의 스쿼드...)
 4. ...
+
+### 화면 구성
+![Simulator Screen Shot - iPhone 13 Pro Max - 2022-05-24 at 18 03 16](https://user-images.githubusercontent.com/96865411/169994656-a81ecf86-dce5-467d-9351-a491b55b72a5.png)![Simulator Screen Shot - iPhone 13 Pro Max - 2022-05-24 at 18 03 27](https://user-images.githubusercontent.com/96865411/169994671-0dc940b6-3681-4bbe-963c-9a10b1d3b1e1.png)![Simulator Screen Shot - iPhone 13 Pro Max - 2022-05-24 at 18 03 30](https://user-images.githubusercontent.com/96865411/169994680-8e91a5d8-d76d-47c2-a730-b8f223f0ca9b.png)
+
+
