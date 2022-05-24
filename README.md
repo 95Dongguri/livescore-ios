@@ -1,8 +1,8 @@
 # LiveScore
 
 ## 프로젝트 설명
-- 날짜(yyyy-MM-dd 양식 준수) 검색하여 검색날짜 축구 경기 스케쥴 표시
-- 홈 팀 빨간색 글씨로 표기
+- 날짜(yyyy-MM-dd, yyyy.MM.dd, yyyy/MM/dd) 검색하여 검색날짜 축구 경기 스케쥴 표시
+- 홈 팀 빨간색 글씨로 표기, 경기 진행 상태 표시, 승리 팀 스코어 빨간색 글씨로 표기
 - 메이저 리그 지원
 - 한국어 지원 X
 - 리그 별 TOP 10 득점순위 검색 (태그 헤더뷰 활용)(선수 상세정보)
@@ -27,15 +27,3 @@
 2. 리그 검색하여 득점순위 10위까지 보여주는 뷰 -> 해당 선수 세부정보 (완료)
 3. 팀 상세 스텟 뷰 하나 더 만들고 싶음 (해당 팀의 스쿼드...)
 4. ...
-
-
-### 첫 번째 커밋
-<img width="349" alt="스크린샷 2022-05-20 오후 6 08 22" src="https://user-images.githubusercontent.com/96865411/169495592-03e7232f-0c8e-4ef5-93ae-1286aad6aab2.png">
-
-### 두 번째 커밋 (로고 밑 타임라인 추가)
-<img width="312" alt="스크린샷 2022-05-20 오후 6 51 08" src="https://user-images.githubusercontent.com/96865411/169503037-f64c91e0-bcab-47eb-9785-cfb8fbaa74e2.png"><img width="312" alt="스크린샷 2022-05-20 오후 7 21 32" src="https://user-images.githubusercontent.com/96865411/169508220-4e544d4e-1a97-4bd8-8f48-683a4c75e536.png">
-
-### 세 번째 커밋 (리그 TOP 10 득점순위, 선수 상세정보, 태그 헤더뷰 활용)
-<img width="344" alt="스크린샷 2022-05-21 오후 7 13 34" src="https://user-images.githubusercontent.com/96865411/169647573-e5446193-dba9-438e-bb51-f6a727409a5b.png"><img width="330" alt="스크린샷 2022-05-21 오후 7 13 50" src="https://user-images.githubusercontent.com/96865411/169647586-9947d464-c806-4a74-95cf-65b55a57215c.png">
-
-
