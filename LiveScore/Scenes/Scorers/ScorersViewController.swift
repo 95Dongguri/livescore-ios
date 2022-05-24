@@ -29,8 +29,6 @@ class ScorersViewController: UIViewController {
 
         tableView.register(ScorersListTableViewHeaderView.self, forHeaderFooterViewReuseIdentifier: ScorersListTableViewHeaderView.identifier)
         
-//        tableView.refreshControl = refreshControl
-
         return tableView
     }()
     

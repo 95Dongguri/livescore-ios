@@ -14,7 +14,6 @@
 		CE15B41B2834FDB60003CC47 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B41A2834FDB60003CC47 /* LiveViewController.swift */; };
 		CE15B4202834FDB70003CC47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE15B41F2834FDB70003CC47 /* Assets.xcassets */; };
 		CE15B4232834FDB70003CC47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE15B4212834FDB70003CC47 /* LaunchScreen.storyboard */; };
-		CE15B42E2834FDB70003CC47 /* LiveScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B42D2834FDB70003CC47 /* LiveScoreTests.swift */; };
 		CE15B4382834FDB70003CC47 /* LiveScoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B4372834FDB70003CC47 /* LiveScoreUITests.swift */; };
 		CE15B43A2834FDB70003CC47 /* LiveScoreUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B4392834FDB70003CC47 /* LiveScoreUITestsLaunchTests.swift */; };
 		CE15B4472834FE6A0003CC47 /* LivePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B4462834FE6A0003CC47 /* LivePresenter.swift */; };
@@ -30,6 +29,12 @@
 		CE288D452838C432002A39A3 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D442838C432002A39A3 /* TabBarViewController.swift */; };
 		CE288D472838C487002A39A3 /* ScorersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D462838C487002A39A3 /* ScorersPresenter.swift */; };
 		CE288D492838C80D002A39A3 /* ScorersListTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D482838C80D002A39A3 /* ScorersListTableViewHeaderView.swift */; };
+		CE2D8296283CD98E00F7AD24 /* LivePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D8295283CD98E00F7AD24 /* LivePresenterTests.swift */; };
+		CE2D8299283CDDD100F7AD24 /* MockLiveScoreSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D8298283CDDD100F7AD24 /* MockLiveScoreSearchManager.swift */; };
+		CE2D829B283CDDFD00F7AD24 /* MockLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D829A283CDDFD00F7AD24 /* MockLiveViewController.swift */; };
+		CE2D829E283CDE5600F7AD24 /* ScorersPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D829D283CDE5600F7AD24 /* ScorersPresenterTests.swift */; };
+		CE2D82A0283CE0C400F7AD24 /* MockScorersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D829F283CE0C400F7AD24 /* MockScorersViewController.swift */; };
+		CE2D82A2283CE0E900F7AD24 /* MockScorersSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D82A1283CE0E900F7AD24 /* MockScorersSearchManager.swift */; };
 		CE2F921E28377CC2007531ED /* LiveListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F921D28377CC2007531ED /* LiveListCollectionViewCell.swift */; };
 		CE2F9221283788CD007531ED /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE2F9220283788CD007531ED /* SVGKit */; };
 		CE2F9223283788CD007531ED /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE2F9222283788CD007531ED /* SVGKitSwift */; };
@@ -68,7 +73,6 @@
 		CE15B4222834FDB70003CC47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE15B4242834FDB70003CC47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE15B4292834FDB70003CC47 /* LiveScoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveScoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE15B42D2834FDB70003CC47 /* LiveScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreTests.swift; sourceTree = "<group>"; };
 		CE15B4332834FDB70003CC47 /* LiveScoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveScoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE15B4372834FDB70003CC47 /* LiveScoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreUITests.swift; sourceTree = "<group>"; };
 		CE15B4392834FDB70003CC47 /* LiveScoreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -82,6 +86,12 @@
 		CE288D442838C432002A39A3 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CE288D462838C487002A39A3 /* ScorersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorersPresenter.swift; sourceTree = "<group>"; };
 		CE288D482838C80D002A39A3 /* ScorersListTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorersListTableViewHeaderView.swift; sourceTree = "<group>"; };
+		CE2D8295283CD98E00F7AD24 /* LivePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePresenterTests.swift; sourceTree = "<group>"; };
+		CE2D8298283CDDD100F7AD24 /* MockLiveScoreSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLiveScoreSearchManager.swift; sourceTree = "<group>"; };
+		CE2D829A283CDDFD00F7AD24 /* MockLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLiveViewController.swift; sourceTree = "<group>"; };
+		CE2D829D283CDE5600F7AD24 /* ScorersPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorersPresenterTests.swift; sourceTree = "<group>"; };
+		CE2D829F283CE0C400F7AD24 /* MockScorersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockScorersViewController.swift; sourceTree = "<group>"; };
+		CE2D82A1283CE0E900F7AD24 /* MockScorersSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockScorersSearchManager.swift; sourceTree = "<group>"; };
 		CE2F921D28377CC2007531ED /* LiveListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveListCollectionViewCell.swift; sourceTree = "<group>"; };
 		CED880C328364A6C0065600E /* LiveResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveResponseModel.swift; sourceTree = "<group>"; };
 		CED880C5283653180065600E /* LiveScoreSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreSearchManager.swift; sourceTree = "<group>"; };
@@ -188,7 +198,8 @@
 		CE15B42C2834FDB70003CC47 /* LiveScoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				CE15B42D2834FDB70003CC47 /* LiveScoreTests.swift */,
+				CE2D829C283CDE1200F7AD24 /* Tests */,
+				CE2D8297283CDDC900F7AD24 /* MockDatas */,
 			);
 			path = LiveScoreTests;
 			sourceTree = "<group>";
@@ -256,6 +267,26 @@
 				CE288D462838C487002A39A3 /* ScorersPresenter.swift */,
 			);
 			path = Scorers;
+			sourceTree = "<group>";
+		};
+		CE2D8297283CDDC900F7AD24 /* MockDatas */ = {
+			isa = PBXGroup;
+			children = (
+				CE2D829A283CDDFD00F7AD24 /* MockLiveViewController.swift */,
+				CE2D8298283CDDD100F7AD24 /* MockLiveScoreSearchManager.swift */,
+				CE2D829F283CE0C400F7AD24 /* MockScorersViewController.swift */,
+				CE2D82A1283CE0E900F7AD24 /* MockScorersSearchManager.swift */,
+			);
+			path = MockDatas;
+			sourceTree = "<group>";
+		};
+		CE2D829C283CDE1200F7AD24 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CE2D8295283CD98E00F7AD24 /* LivePresenterTests.swift */,
+				CE2D829D283CDE5600F7AD24 /* ScorersPresenterTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		CED880C028364A530065600E /* Models */ = {
@@ -360,6 +391,7 @@
 					};
 					CE15B4282834FDB70003CC47 = {
 						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1340;
 						TestTargetID = CE15B4122834FDB60003CC47;
 					};
 					CE15B4322834FDB70003CC47 = {
@@ -551,7 +583,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE15B42E2834FDB70003CC47 /* LiveScoreTests.swift in Sources */,
+				CE2D829B283CDDFD00F7AD24 /* MockLiveViewController.swift in Sources */,
+				CE2D8299283CDDD100F7AD24 /* MockLiveScoreSearchManager.swift in Sources */,
+				CE2D82A0283CE0C400F7AD24 /* MockScorersViewController.swift in Sources */,
+				CE2D829E283CDE5600F7AD24 /* ScorersPresenterTests.swift in Sources */,
+				CE2D8296283CD98E00F7AD24 /* LivePresenterTests.swift in Sources */,
+				CE2D82A2283CE0E900F7AD24 /* MockScorersSearchManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,15 +804,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B4SNVYSL93;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Dong-Hyeok-Kim.LiveScoreTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LiveScore.app/LiveScore";
@@ -788,11 +832,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B4SNVYSL93;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Dong-Hyeok-Kim.LiveScoreTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
