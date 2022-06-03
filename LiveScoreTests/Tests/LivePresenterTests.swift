@@ -47,5 +47,6 @@ class LivePresenterTests: XCTestCase {
         
         XCTAssertTrue(vc.isCalledReloadCollectionView)
         XCTAssertTrue(liveScoreSearchManager.isCalledRequest)
+        XCTAssertTrue(vc.isCalledMakeToast)
     }
 }

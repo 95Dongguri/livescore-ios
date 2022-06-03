@@ -9,10 +9,11 @@ import Foundation
 @testable import LiveScore
 
 class MockLiveViewController: LiveProtocol {
-    
+
     var isCalledSetupNavigationTitle = false
     var isCalledSetupViews = false
     var isCalledReloadCollectionView = false
+    var isCalledMakeToast = false
     
     func setupNavigationTitle() {
         isCalledSetupNavigationTitle = true
@@ -24,5 +25,9 @@ class MockLiveViewController: LiveProtocol {
     
     func reloadCollectionView() {
         isCalledReloadCollectionView = true
+    }
+    
+    func makeToast() {
+        isCalledMakeToast = true
     }
 }

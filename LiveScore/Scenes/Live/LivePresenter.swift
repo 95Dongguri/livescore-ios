@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Toast
 
 protocol LiveProtocol: AnyObject {
     func setupNavigationTitle()
     func setupViews()
     func reloadCollectionView()
+    func makeToast()
 }
 
 class LivePresenter: NSObject {
@@ -41,7 +43,7 @@ extension LivePresenter: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LiveListCollectionViewCell.identifier, for: indexPath) as? LiveListCollectionViewCell else { return UICollectionViewCell() }
         
-        let result = resultList[indexPath.row]
+        let result = resultList[indexPath.item]
         cell.setup(result: result)
         
         return cell
@@ -57,7 +59,11 @@ extension LivePresenter: UISearchBarDelegate {
             .replacingOccurrences(of: ".", with: "-") else { return }
         
         liveScoreSearchManager.request(from: searchDate) { [weak self] newValue in
-            self?.resultList += newValue
+            if newValue.isEmpty {
+                self?.vc?.makeToast()
+            }
+            
+            self?.resultList = newValue
             self?.vc?.reloadCollectionView()
         }
     }

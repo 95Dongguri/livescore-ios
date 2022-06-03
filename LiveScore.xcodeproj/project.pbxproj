@@ -38,6 +38,7 @@
 		CE2F921E28377CC2007531ED /* LiveListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F921D28377CC2007531ED /* LiveListCollectionViewCell.swift */; };
 		CE2F9221283788CD007531ED /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE2F9220283788CD007531ED /* SVGKit */; };
 		CE2F9223283788CD007531ED /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE2F9222283788CD007531ED /* SVGKitSwift */; };
+		CE421041284A134D004F7261 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = CE421040284A134D004F7261 /* Toast */; };
 		CED880C428364A6C0065600E /* LiveResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED880C328364A6C0065600E /* LiveResponseModel.swift */; };
 		CED880C6283653180065600E /* LiveScoreSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED880C5283653180065600E /* LiveScoreSearchManager.swift */; };
 		DDD3D44CC414CC6C13F590C5 /* Pods_LiveScore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94148FCA5DA357158A50C97 /* Pods_LiveScore.framework */; };
@@ -112,6 +113,7 @@
 				CE2F9221283788CD007531ED /* SVGKit in Frameworks */,
 				CE15B44D2834FE8A0003CC47 /* Alamofire in Frameworks */,
 				CE288D2D28387E84002A39A3 /* Kingfisher in Frameworks */,
+				CE421041284A134D004F7261 /* Toast in Frameworks */,
 				DDD3D44CC414CC6C13F590C5 /* Pods_LiveScore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +334,7 @@
 				CE2F9220283788CD007531ED /* SVGKit */,
 				CE2F9222283788CD007531ED /* SVGKitSwift */,
 				CE288D2C28387E84002A39A3 /* Kingfisher */,
+				CE421040284A134D004F7261 /* Toast */,
 			);
 			productName = LiveScore;
 			productReference = CE15B4132834FDB60003CC47 /* LiveScore.app */;
@@ -414,6 +417,7 @@
 				CE15B44B2834FE8A0003CC47 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CE2F921F283788CD007531ED /* XCRemoteSwiftPackageReference "SVGKit" */,
 				CE288D2B28387E84002A39A3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				CE42103F284A134D004F7261 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = CE15B4142834FDB60003CC47 /* Products */;
 			projectDirPath = "";
@@ -965,6 +969,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		CE42103F284A134D004F7261 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -992,6 +1004,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE2F921F283788CD007531ED /* XCRemoteSwiftPackageReference "SVGKit" */;
 			productName = SVGKitSwift;
+		};
+		CE421040284A134D004F7261 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE42103F284A134D004F7261 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

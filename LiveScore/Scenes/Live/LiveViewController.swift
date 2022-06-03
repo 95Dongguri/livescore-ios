@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Toast
 
 class LiveViewController: UIViewController {
     
@@ -58,5 +59,9 @@ extension LiveViewController: LiveProtocol {
     
     func reloadCollectionView() {
         collectionView.reloadData()
+    }
+    
+    func makeToast() {
+        view.makeToast("😭 경기 일정이 없습니다.")
     }
 }
