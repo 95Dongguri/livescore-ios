@@ -23,7 +23,7 @@ class ScorersListCollectionViewCell: UICollectionViewCell {
     
     private lazy var birthLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 18.0, weight: .semibold)
+        label.font = .systemFont(ofSize: 8.0, weight: .semibold)
         label.textColor = .secondaryLabel
         
         return label
