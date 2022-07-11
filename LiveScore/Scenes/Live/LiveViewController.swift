@@ -44,7 +44,7 @@ extension LiveViewController: LiveProtocol {
     
     func setupViews() {
         let searchController = UISearchController()
-        searchController.searchBar.placeholder = "날짜를 입력해주세요. (yyyy-MM-dd)"
+        searchController.searchBar.placeholder = "날짜를 입력해주세요."
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = presenter
 

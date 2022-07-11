@@ -66,11 +66,27 @@ class LiveListCollectionViewCell: UICollectionViewCell {
     
     func setup(result: Result) {
         setupLayout()
+
+        guard let url = result.competition.emblem else { return }
         
-        guard let imageURL = URL(string: result.competition.emblem ?? "") else { return }
-        
-        logoImageView.kf.setImage(with: imageURL)
-        
+        DispatchQueue.global(qos: .background).async {
+            if url.contains("svg") {
+                guard let imageURL = URL(string: url) else { return }
+                let data = try? Data(contentsOf: imageURL)
+                guard let logo = SVGKImage(data: data) else { return }
+                
+                DispatchQueue.main.async {
+                    self.logoImageView.image = logo.uiImage
+                }
+            } else {
+                guard let imageURL = URL(string: url) else { return }
+                
+                DispatchQueue.main.async {
+                    self.logoImageView.kf.setImage(with: imageURL)
+                }
+            }
+        }
+
         statusLabel.text = result.status
         homeNameLabel.text = result.homeTeam.name
         awayNameLabel.text = result.awayTeam.name
@@ -94,11 +110,6 @@ class LiveListCollectionViewCell: UICollectionViewCell {
             homeScoreLabel.textColor = .label
             awayScoreLabel.textColor = .label
         }
-        
-//        let data = try? Data(contentsOf: imageURL)
-//        let logo = SVGKImage(data: data)
-//
-//        logoImageView.image = logo?.uiImage
     }
 }
 
