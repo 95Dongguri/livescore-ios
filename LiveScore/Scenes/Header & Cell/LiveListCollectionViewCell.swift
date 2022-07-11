@@ -7,20 +7,21 @@
 
 import Kingfisher
 import SnapKit
-import SVGKit
 import UIKit
+import WebKit
 
 
 class LiveListCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "ScoreListCollectionViewCell"
     
-    private lazy var logoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
-        imageView.clipsToBounds = true
+    private lazy var logoView: WKWebView = {
+        let webView = WKWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        webView.contentMode = .scaleAspectFill
+        webView.sizeToFit()
+        webView.autoresizesSubviews = true
         
-        return imageView
+        return webView
     }()
     
     private lazy var statusLabel: UILabel = {
@@ -66,24 +67,13 @@ class LiveListCollectionViewCell: UICollectionViewCell {
     
     func setup(result: Result) {
         setupLayout()
-
-        guard let url = result.competition.emblem else { return }
         
-        DispatchQueue.global(qos: .background).async {
-            if url.contains("svg") {
-                guard let imageURL = URL(string: url) else { return }
-                let data = try? Data(contentsOf: imageURL)
-                guard let logo = SVGKImage(data: data) else { return }
-                
-                DispatchQueue.main.async {
-                    self.logoImageView.image = logo.uiImage
-                }
-            } else {
-                guard let imageURL = URL(string: url) else { return }
-                
-                DispatchQueue.main.async {
-                    self.logoImageView.kf.setImage(with: imageURL)
-                }
+        guard let url = URL(string: result.competition.emblem ?? "") else { return }
+        
+        DispatchQueue.global(qos: .default).async {
+            let logoRequest = URLRequest(url: url)
+            DispatchQueue.main.async {
+                self.logoView.load(logoRequest)
             }
         }
 
@@ -118,16 +108,16 @@ extension LiveListCollectionViewCell {
         backgroundColor = .systemBackground
         layer.cornerRadius = 12.0
         
-        [logoImageView, homeNameLabel, homeScoreLabel, statusLabel, awayNameLabel, awayScoreLabel].forEach {
+        [logoView, homeNameLabel, homeScoreLabel, statusLabel, awayNameLabel, awayScoreLabel].forEach {
             addSubview($0)
         }
         
         statusLabel.snp.makeConstraints {
-            $0.centerX.equalTo(logoImageView)
-            $0.top.equalTo(logoImageView.snp.bottom).offset(3.0)
+            $0.centerX.equalTo(logoView)
+            $0.top.equalTo(logoView.snp.bottom).offset(3.0)
         }
         
-        logoImageView.snp.makeConstraints {
+        logoView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(10.0)
             $0.leading.equalToSuperview().inset(8.0)
             $0.height.equalTo(50.0)
@@ -136,7 +126,7 @@ extension LiveListCollectionViewCell {
         
         homeNameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(12.0)
-            $0.leading.equalTo(logoImageView.snp.trailing).offset(5.0)
+            $0.leading.equalTo(logoView.snp.trailing).offset(5.0)
         }
         
         homeScoreLabel.snp.makeConstraints {
