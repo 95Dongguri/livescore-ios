@@ -35,10 +35,10 @@ struct FullTime: Decodable {
 
 struct HomeTeam: Decodable {
     let name: String
-//    let crest: String? // 팀 로고
+    let crest: String? // 팀 로고
 }
 
 struct AwayTeam: Decodable {
     let name: String
-//    let crest: String? // 팀 로고
+    let crest: String? // 팀 로고
 }

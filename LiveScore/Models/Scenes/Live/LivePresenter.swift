@@ -13,6 +13,7 @@ protocol LiveProtocol: AnyObject {
     func setupViews()
     func reloadCollectionView()
     func makeToast()
+    func pushLiveDetail(with result: Result)
 }
 
 class LivePresenter: NSObject {
@@ -43,10 +44,18 @@ extension LivePresenter: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LiveListCollectionViewCell.identifier, for: indexPath) as? LiveListCollectionViewCell else { return UICollectionViewCell() }
         
-        let result = resultList[indexPath.item]
+        let result = resultList[indexPath.row]
         cell.setup(result: result)
         
         return cell
+    }
+}
+
+extension LivePresenter: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let result = resultList[indexPath.row]
+        
+        vc?.pushLiveDetail(with: result)
     }
 }
 
@@ -55,7 +64,8 @@ extension LivePresenter: UISearchBarDelegate {
         resultList = []
         vc?.reloadCollectionView()
         
-        guard let searchDate = searchBar.text?.replacingOccurrences(of: "/", with: "-")
+        guard let searchDate = searchBar.text?
+            .replacingOccurrences(of: "/", with: "-")
             .replacingOccurrences(of: ".", with: "-") else { return }
         
         liveScoreSearchManager.request(from: searchDate) { [weak self] newValue in

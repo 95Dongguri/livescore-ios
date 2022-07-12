@@ -26,6 +26,7 @@ class LiveViewController: UIViewController {
         collectionView.register(LiveListCollectionViewCell.self, forCellWithReuseIdentifier: LiveListCollectionViewCell.identifier)
         
         collectionView.dataSource = presenter
+        collectionView.delegate = presenter
         
         return collectionView
     }()
@@ -47,7 +48,7 @@ extension LiveViewController: LiveProtocol {
         searchController.searchBar.placeholder = "날짜를 입력해주세요."
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = presenter
-
+        
         navigationItem.searchController = searchController
         
         view.addSubview(collectionView)
@@ -59,6 +60,15 @@ extension LiveViewController: LiveProtocol {
     
     func reloadCollectionView() {
         collectionView.reloadData()
+    }
+    
+    func pushLiveDetail(with result: Result) {
+        let liveDetailViewController = LiveDetailViewController(result: result)
+        
+        guard let presentation = liveDetailViewController.presentationController as? UISheetPresentationController else { return }
+        
+        presentation.detents = [.medium()]
+        present(liveDetailViewController, animated: true)
     }
     
     func makeToast() {
