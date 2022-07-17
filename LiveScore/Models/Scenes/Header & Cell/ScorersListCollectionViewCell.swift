@@ -55,6 +55,7 @@ class ScorersListCollectionViewCell: UICollectionViewCell {
     
     private lazy var logoView: UIImageView = {
         let imageView = UIImageView()
+        imageView.layer.borderWidth = 0.3
         imageView.contentMode = .scaleToFill
         
         return imageView
