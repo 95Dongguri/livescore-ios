@@ -22,7 +22,6 @@
 		CE1E79882838CFED0041B7A7 /* ScorersListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E79872838CFED0041B7A7 /* ScorersListCollectionViewCell.swift */; };
 		CE26C09C287D17AE004FDC5D /* LiveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26C09B287D17AE004FDC5D /* LiveDetailViewController.swift */; };
 		CE26C09E287D17B6004FDC5D /* LiveDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26C09D287D17B6004FDC5D /* LiveDetailPresenter.swift */; };
-		CE288D2D28387E84002A39A3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CE288D2C28387E84002A39A3 /* Kingfisher */; };
 		CE288D3128389111002A39A3 /* LiveRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D3028389111002A39A3 /* LiveRequestModel.swift */; };
 		CE288D362838B248002A39A3 /* ScoreResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D352838B248002A39A3 /* ScoreResponseModel.swift */; };
 		CE288D3B2838B46F002A39A3 /* ScorersSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D3A2838B46F002A39A3 /* ScorersSearchManager.swift */; };
@@ -113,7 +112,6 @@
 			files = (
 				CE15B44A2834FE7F0003CC47 /* SnapKit in Frameworks */,
 				CE15B44D2834FE8A0003CC47 /* Alamofire in Frameworks */,
-				CE288D2D28387E84002A39A3 /* Kingfisher in Frameworks */,
 				CE421041284A134D004F7261 /* Toast in Frameworks */,
 				DDD3D44CC414CC6C13F590C5 /* Pods_LiveScore.framework in Frameworks */,
 				CE4641E22883F4BA000122E9 /* SDWebImageSVGCoder in Frameworks */,
@@ -343,7 +341,6 @@
 			packageProductDependencies = (
 				CE15B4492834FE7F0003CC47 /* SnapKit */,
 				CE15B44C2834FE8A0003CC47 /* Alamofire */,
-				CE288D2C28387E84002A39A3 /* Kingfisher */,
 				CE421040284A134D004F7261 /* Toast */,
 				CE4641E12883F4BA000122E9 /* SDWebImageSVGCoder */,
 			);
@@ -426,7 +423,6 @@
 			packageReferences = (
 				CE15B4482834FE7F0003CC47 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CE15B44B2834FE8A0003CC47 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				CE288D2B28387E84002A39A3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				CE42103F284A134D004F7261 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				CE4641E02883F4BA000122E9 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */,
 			);
@@ -966,14 +962,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		CE288D2B28387E84002A39A3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
 		CE42103F284A134D004F7261 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scalessec/Toast-Swift";
@@ -1002,11 +990,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE15B44B2834FE8A0003CC47 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		CE288D2C28387E84002A39A3 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE288D2B28387E84002A39A3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
 		};
 		CE421040284A134D004F7261 /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;

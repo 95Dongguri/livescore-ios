@@ -5,7 +5,6 @@
 //  Created by 김동혁 on 2022/07/12.
 //
 
-import Kingfisher
 import UIKit
 import SDWebImageSVGCoder
 import SnapKit
@@ -130,7 +129,7 @@ extension LiveDetailViewController: LiveDetailProtocol {
         
         resultLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(homeScoreLabel.snp.bottom).offset(16.0)
+            $0.top.equalTo(homeScoreLabel.snp.bottom).offset(48.0)
         }
         
         let SVGCoder = SDImageSVGCoder.shared

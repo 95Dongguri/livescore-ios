@@ -5,7 +5,6 @@
 //  Created by 김동혁 on 2022/05/20.
 //
 
-import Kingfisher
 import SDWebImageSVGCoder
 import SnapKit
 import UIKit
