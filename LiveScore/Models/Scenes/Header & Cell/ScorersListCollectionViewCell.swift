@@ -6,6 +6,7 @@
 //
 
 import Kingfisher
+import SDWebImageSVGCoder
 import SnapKit
 import UIKit
 
@@ -53,10 +54,9 @@ class ScorersListCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var logoImageView: UIImageView = {
+    private lazy var logoView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        imageView.clipsToBounds = true
         
         return imageView
     }()
@@ -88,9 +88,19 @@ class ScorersListCollectionViewCell: UICollectionViewCell {
     func setup(scores: Scorers) {
         setupLayout()
         
-        guard let imageURL = URL(string: scores.team.crest ?? "") else { return }
+        let SVGCoder = SDImageSVGCoder.shared
+        SDImageCodersManager.shared.addCoder(SVGCoder)
         
-        logoImageView.kf.setImage(with: imageURL)
+        guard let url = URL(string: scores.team.crest ?? "") else { return }
+        
+        DispatchQueue.main.async {
+            self.logoView.sd_setImage(with: url)
+            
+            var rect = self.logoView.frame
+            rect.size.width = 80.0
+            rect.size.height = 80.0
+            self.logoView.frame = rect
+        }
         
         nameLabel.text = scores.player.name
         birthLabel.text = scores.player.dateOfBirth
@@ -102,8 +112,6 @@ class ScorersListCollectionViewCell: UICollectionViewCell {
         goalLabel.text = "Goals: \(scores.goals ?? 0)"
         assistsLabel.text = "Assists: \(scores.assists ?? 0)"
         penaltiesLabel.text = "Penalties: \(scores.penalties ?? 0)"
-        
-        
     }
 }
 
@@ -112,22 +120,32 @@ extension ScorersListCollectionViewCell {
         backgroundColor = .systemBackground
         layer.cornerRadius = 12.0
         
-        [logoImageView, nameLabel, birthLabel, nationLabel, positionLabel, teamNameLabel, goalLabel, assistsLabel, penaltiesLabel].forEach {
+        [
+            logoView,
+            nameLabel,
+            birthLabel,
+            nationLabel,
+            positionLabel,
+            teamNameLabel,
+            goalLabel,
+            assistsLabel,
+            penaltiesLabel
+        ].forEach {
             addSubview($0)
         }
         
-        logoImageView.snp.makeConstraints {
+        logoView.snp.makeConstraints {
             $0.top.leading.equalToSuperview().inset(8.0)
             $0.width.height.equalTo(80.0)
         }
         
         nameLabel.snp.makeConstraints {
-            $0.top.equalTo(logoImageView.snp.top)
-            $0.leading.equalTo(logoImageView.snp.trailing).offset(16.0)
+            $0.top.equalTo(logoView.snp.top)
+            $0.leading.equalTo(logoView.snp.trailing).offset(16.0)
         }
         
         birthLabel.snp.makeConstraints {
-            $0.top.equalTo(logoImageView.snp.top)
+            $0.top.equalTo(logoView.snp.top)
             $0.trailing.equalToSuperview().inset(12.0)
         }
         
@@ -135,27 +153,27 @@ extension ScorersListCollectionViewCell {
             $0.leading.equalTo(nameLabel.snp.leading)
             $0.top.equalTo(nameLabel.snp.bottom).offset(5.0)
         }
-
+        
         positionLabel.snp.makeConstraints {
             $0.leading.equalTo(nameLabel.snp.leading)
             $0.top.equalTo(nationLabel.snp.bottom).offset(5.0)
         }
-
+        
         teamNameLabel.snp.makeConstraints {
-            $0.centerX.equalTo(logoImageView)
-            $0.top.equalTo(logoImageView.snp.bottom).offset(5.0)
+            $0.centerX.equalTo(logoView)
+            $0.top.equalTo(logoView.snp.bottom).offset(5.0)
         }
-
+        
         goalLabel.snp.makeConstraints {
             $0.leading.equalTo(nameLabel.snp.leading)
             $0.top.equalTo(teamNameLabel.snp.top)
         }
-
+        
         assistsLabel.snp.makeConstraints {
             $0.leading.equalTo(goalLabel.snp.trailing).offset(5.0)
             $0.top.equalTo(teamNameLabel.snp.top)
         }
-
+        
         penaltiesLabel.snp.makeConstraints {
             $0.leading.equalTo(assistsLabel.snp.trailing).offset(5.0)
             $0.top.equalTo(teamNameLabel.snp.top)

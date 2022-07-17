@@ -6,6 +6,7 @@
 //
 
 import Kingfisher
+import SDWebImageSVGCoder
 import SnapKit
 import UIKit
 import WebKit
@@ -15,13 +16,12 @@ class LiveListCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "ScoreListCollectionViewCell"
     
-    private lazy var logoView: WKWebView = {
-        let webView = WKWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        webView.contentMode = .scaleAspectFill
-        webView.sizeToFit()
-        webView.autoresizesSubviews = true
+    private lazy var logoView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .white
+        imageView.contentMode = .scaleToFill
         
-        return webView
+        return imageView
     }()
     
     private lazy var statusLabel: UILabel = {
@@ -68,15 +68,22 @@ class LiveListCollectionViewCell: UICollectionViewCell {
     func setup(result: Result) {
         setupLayout()
         
+        let SVGCoder = SDImageSVGCoder.shared
+        SDImageCodersManager.shared.addCoder(SVGCoder)
+        
         guard let url = URL(string: result.competition.emblem ?? "") else { return }
         
-        DispatchQueue.global(qos: .default).async {
-            let logoRequest = URLRequest(url: url)
+        DispatchQueue.main.async {
+            self.logoView.sd_setImage(with: url)
+            
             DispatchQueue.main.async {
-                self.logoView.load(logoRequest)
+                var rect = self.logoView.frame
+                rect.size.width = 50.0
+                rect.size.height = 50.0
+                self.logoView.frame = rect
             }
         }
-
+        
         statusLabel.text = result.status
         homeNameLabel.text = result.homeTeam.name
         awayNameLabel.text = result.awayTeam.name
@@ -108,13 +115,15 @@ extension LiveListCollectionViewCell {
         backgroundColor = .systemBackground
         layer.cornerRadius = 12.0
         
-        [logoView, homeNameLabel, homeScoreLabel, statusLabel, awayNameLabel, awayScoreLabel].forEach {
+        [
+            logoView,
+            homeNameLabel,
+            homeScoreLabel,
+            statusLabel,
+            awayNameLabel,
+            awayScoreLabel
+        ].forEach {
             addSubview($0)
-        }
-        
-        statusLabel.snp.makeConstraints {
-            $0.centerX.equalTo(logoView)
-            $0.top.equalTo(logoView.snp.bottom).offset(3.0)
         }
         
         logoView.snp.makeConstraints {
@@ -132,6 +141,11 @@ extension LiveListCollectionViewCell {
         homeScoreLabel.snp.makeConstraints {
             $0.top.equalTo(homeNameLabel.snp.top)
             $0.trailing.equalToSuperview().inset(16.0)
+        }
+        
+        statusLabel.snp.makeConstraints {
+            $0.centerX.equalTo(logoView)
+            $0.top.equalTo(logoView.snp.bottom).offset(3.0)
         }
         
         awayNameLabel.snp.makeConstraints {

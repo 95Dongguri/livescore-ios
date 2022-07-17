@@ -7,8 +7,8 @@
 
 import Kingfisher
 import UIKit
+import SDWebImageSVGCoder
 import SnapKit
-import SVGKit
 
 class LiveDetailViewController: UIViewController {
     
@@ -56,6 +56,13 @@ class LiveDetailViewController: UIViewController {
         return label
     }()
     
+    private lazy var resultLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 32.0, weight: .bold)
+
+        return label
+    }()
+    
     init(result: Result) {
         super.init(nibName: nil, bundle: nil)
         
@@ -77,7 +84,15 @@ extension LiveDetailViewController: LiveDetailProtocol {
     func setupViews(with result: Result) {
         view.backgroundColor = .systemBackground
         
-        [homeImageView, awayImageView, homeNameLabel, awayNameLabel, homeScoreLabel, awayScoreLabel].forEach {
+        [
+            homeImageView,
+            awayImageView,
+            homeNameLabel,
+            awayNameLabel,
+            homeScoreLabel,
+            awayScoreLabel,
+            resultLabel
+        ].forEach {
             view.addSubview($0)
         }
         
@@ -113,48 +128,24 @@ extension LiveDetailViewController: LiveDetailProtocol {
             $0.centerX.equalTo(awayImageView)
         }
         
-        DispatchQueue.global(qos: .default).async {
-            guard let homeCrest = result.homeTeam.crest else { return }
-            guard let awayCrest = result.awayTeam.crest  else { return }
-            
-            if homeCrest.contains("svg") {
-                guard let homeUrl = URL(string: homeCrest) else { return }
-                
-                let homeData = try? Data(contentsOf: homeUrl)
-                let homeLogo = SVGKImage(data: homeData)
-                
-                DispatchQueue.main.async {
-                    self.homeImageView.image = homeLogo?.uiImage
-                }
-            } else {
-                guard let homeUrl = URL(string: homeCrest) else { return }
-                
-                DispatchQueue.main.async {
-                    self.homeImageView.kf.setImage(with: homeUrl)
-                }
-            }
-            
-            if awayCrest.contains("svg") {
-                guard let awayUrl = URL(string: awayCrest) else { return }
-                
-                let awayData = try? Data(contentsOf: awayUrl)
-                let awayLogo = SVGKImage(data: awayData)
-                
-                DispatchQueue.main.async {
-                    self.awayImageView.image = awayLogo?.uiImage
-                }
-            } else {
-                guard let awayUrl = URL(string: awayCrest) else { return }
-                
-                DispatchQueue.main.async {
-                    self.awayImageView.kf.setImage(with: awayUrl)
-                }
-            }
+        resultLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(homeScoreLabel.snp.bottom).offset(16.0)
+        }
+        
+        let SVGCoder = SDImageSVGCoder.shared
+        SDImageCodersManager.shared.addCoder(SVGCoder)
+        
+        guard let homeUrl = URL(string: result.homeTeam.crest ?? "") else { return }
+        guard let awayUrl = URL(string: result.awayTeam.crest ?? "") else { return }
+        
+        DispatchQueue.main.async {
+            self.homeImageView.sd_setImage(with: homeUrl)
+            self.awayImageView.sd_setImage(with: awayUrl)
         }
         
         homeNameLabel.text = result.homeTeam.name
         awayNameLabel.text = result.awayTeam.name
-        
         
         let homeScore = result.score.fullTime?.home ?? 0
         let awayScore = result.score.fullTime?.away ?? 0
@@ -174,6 +165,22 @@ extension LiveDetailViewController: LiveDetailProtocol {
             awayScoreLabel.text = "\(awayScore)"
             homeScoreLabel.textColor = .label
             awayScoreLabel.textColor = .label
+        }
+        
+        if result.status == "FINISHED" {
+            if homeScore > awayScore {
+                resultLabel.textColor = .systemRed
+                resultLabel.text = "HOMETEAM WIN!!"
+            } else if homeScore < awayScore {
+                resultLabel.textColor = .systemBlue
+                resultLabel.text = "AWAYTEAM WIN!!"
+            } else {
+                resultLabel.textColor = .label
+                resultLabel.text = "DRAW.."
+            }
+        } else {
+            resultLabel.textColor = .tertiaryLabel
+            resultLabel.text = "Not Finished.."
         }
     }
 }

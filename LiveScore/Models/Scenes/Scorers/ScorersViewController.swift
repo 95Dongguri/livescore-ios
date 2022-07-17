@@ -63,7 +63,10 @@ extension ScorersViewController: ScorersProtocol {
     }
     
     func setupLayout() {
-        [tableView, collectionView].forEach {
+        [
+            tableView,
+            collectionView
+        ].forEach {
             view.addSubview($0)
         }
         
