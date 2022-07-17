@@ -21,6 +21,7 @@ struct Result: Decodable {
 }
 
 struct Competition: Decodable {
+    let name: String
     let emblem: String?
 }
 
