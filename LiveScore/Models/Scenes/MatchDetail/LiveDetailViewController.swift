@@ -13,6 +13,14 @@ class LiveDetailViewController: UIViewController {
     
     private var presenter: LiveDetailPresenter!
     
+    private lazy var areaNameLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 16.0, weight: .bold)
+        label.textColor = .systemPink
+        
+        return label
+    }()
+    
     private lazy var leagueNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 24.0, weight: .medium)
@@ -91,6 +99,7 @@ extension LiveDetailViewController: LiveDetailProtocol {
         view.backgroundColor = .systemBackground
         
         [
+            areaNameLabel,
             leagueNameLabel,
             homeImageView,
             awayImageView,
@@ -103,8 +112,13 @@ extension LiveDetailViewController: LiveDetailProtocol {
             view.addSubview($0)
         }
         
+        areaNameLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(4.0)
+            $0.centerX.equalToSuperview()
+        }
+        
         leagueNameLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8.0)
+            $0.top.equalTo(areaNameLabel.snp.bottom).offset(4.0)
             $0.centerX.equalToSuperview()
         }
         
@@ -145,6 +159,7 @@ extension LiveDetailViewController: LiveDetailProtocol {
             $0.top.equalTo(homeScoreLabel.snp.bottom).offset(48.0)
         }
         
+        areaNameLabel.text = result.area.name
         leagueNameLabel.text = result.competition.name
         
         let SVGCoder = SDImageSVGCoder.shared

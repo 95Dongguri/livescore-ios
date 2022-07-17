@@ -14,10 +14,15 @@ struct LiveResponseModel: Decodable {
 struct Result: Decodable {
     let status: String
 //    var utcDate: String    경기시작시간
+    let area: Area
     var competition: Competition
     var score: Score
     let homeTeam: HomeTeam
     let awayTeam: AwayTeam
+}
+
+struct Area: Decodable {
+    let name: String
 }
 
 struct Competition: Decodable {
