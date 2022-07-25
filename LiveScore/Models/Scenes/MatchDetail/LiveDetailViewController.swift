@@ -163,12 +163,13 @@ extension LiveDetailViewController: LiveDetailProtocol {
         leagueNameLabel.text = result.competition.name
         
         let SVGCoder = SDImageSVGCoder.shared
+        
         SDImageCodersManager.shared.addCoder(SVGCoder)
         
         guard let homeUrl = URL(string: result.homeTeam.crest ?? "") else { return }
         guard let awayUrl = URL(string: result.awayTeam.crest ?? "") else { return }
         
-        DispatchQueue.main.async {
+        DispatchQueue.global(qos: .default).async {
             self.homeImageView.sd_setImage(with: homeUrl)
             self.awayImageView.sd_setImage(with: awayUrl)
         }
