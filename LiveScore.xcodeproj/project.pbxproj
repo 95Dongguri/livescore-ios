@@ -189,6 +189,7 @@
 				CE15B4182834FDB60003CC47 /* SceneDelegate.swift */,
 				CED880C82836531F0065600E /* Manager */,
 				CED880C028364A530065600E /* Models */,
+				CE15B4512834FE9C0003CC47 /* Scenes */,
 				CE15B41F2834FDB70003CC47 /* Assets.xcassets */,
 				CE15B4212834FDB70003CC47 /* LaunchScreen.storyboard */,
 				CE15B4242834FDB70003CC47 /* Info.plist */,
@@ -306,7 +307,6 @@
 				CE288D3F2838C2A8002A39A3 /* TabBarItem.swift */,
 				CE288D342838B23B002A39A3 /* LiveScore */,
 				CE288D392838B25D002A39A3 /* Score */,
-				CE15B4512834FE9C0003CC47 /* Scenes */,
 			);
 			path = Models;
 			sourceTree = "<group>";
