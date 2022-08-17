@@ -24,7 +24,7 @@ class LiveDetailViewController: UIViewController {
     private lazy var leagueNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 24.0, weight: .medium)
-
+        
         return label
     }()
     
@@ -73,7 +73,7 @@ class LiveDetailViewController: UIViewController {
     private lazy var resultLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 32.0, weight: .bold)
-
+        
         return label
     }()
     
@@ -169,10 +169,8 @@ extension LiveDetailViewController: LiveDetailProtocol {
         guard let homeUrl = URL(string: result.homeTeam.crest ?? "") else { return }
         guard let awayUrl = URL(string: result.awayTeam.crest ?? "") else { return }
         
-        DispatchQueue.global(qos: .default).async {
-            self.homeImageView.sd_setImage(with: homeUrl)
-            self.awayImageView.sd_setImage(with: awayUrl)
-        }
+        homeImageView.sd_setImage(with: homeUrl)
+        awayImageView.sd_setImage(with: awayUrl)
         
         homeNameLabel.text = result.homeTeam.name
         awayNameLabel.text = result.awayTeam.name

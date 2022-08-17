@@ -93,17 +93,14 @@ class ScorersListCollectionViewCell: UICollectionViewCell {
         
         guard let url = URL(string: scores.team.crest ?? "") else { return }
         
-        DispatchQueue.global(qos: .default).async {
-            self.logoView.sd_setImage(with: url)
-            
-            DispatchQueue.main.async {
-                var rect = self.logoView.frame
-                
-                rect.size.width = 80.0
-                rect.size.height = 80.0
-                self.logoView.frame = rect
-            }
-        }
+        logoView.sd_setImage(with: url)
+        
+        var rect = logoView.frame
+        
+        rect.size.width = 80.0
+        rect.size.height = 80.0
+        
+        logoView.frame = rect
         
         nameLabel.text = scores.player.name
         birthLabel.text = scores.player.dateOfBirth
