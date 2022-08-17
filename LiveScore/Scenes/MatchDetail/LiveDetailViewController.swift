@@ -210,7 +210,7 @@ extension LiveDetailViewController: LiveDetailProtocol {
             }
         } else {
             resultLabel.textColor = .tertiaryLabel
-            resultLabel.text = "Not Finished.."
+            resultLabel.text = result.status
         }
     }
 }
