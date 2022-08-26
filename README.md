@@ -1,7 +1,7 @@
 # LiveScore
 
 ## 프로젝트 설명
-- 날짜(yyyy-MM-dd, yyyy.MM.dd, yyyy/MM/dd) 검색하여 검색날짜 축구 경기 스케쥴 표시
+- 달력에서 검색 날짜 선택 후 해당 날짜 경기 표시 (피드백 받은 부분)
 - 홈 팀 빨간색 글씨로 표기, 경기 진행 상태 표시, 승리 팀 스코어 빨간색 글씨로 표기
 - 메이저 리그 지원
 - 한국어 지원 X
@@ -30,4 +30,9 @@
 4. ...
 
 ### 화면 구성
-![Simulator Screen Shot - iPhone 13 Pro Max - 2022-05-24 at 18 03 16](https://user-images.githubusercontent.com/96865411/169995344-3c81cb28-90ce-40e7-a57d-2355e466fe5d.png)![Simulator Screen Shot - iPhone 13 Pro Max - 2022-05-24 at 18 03 27](https://user-images.githubusercontent.com/96865411/169995384-3ad63f05-566f-48da-87fd-cda2385f7bc3.png)![Simulator Screen Shot - iPhone 13 Pro Max - 2022-05-24 at 18 03 30](https://user-images.githubusercontent.com/96865411/169995412-27b721c2-f75b-4a5e-bdaa-99b2fd8f81bf.png)
+![Simulator Screen Shot - iPhone 13 Pro Max - 2022-08-26 at 16 07 36](https://user-images.githubusercontent.com/96865411/186843935-85598562-82ea-4dfa-904b-46114a11388e.png)
+![Simulator Screen Shot - iPhone 13 Pro Max - 2022-08-26 at 16 07 58](https://user-images.githubusercontent.com/96865411/186843898-c5667593-9473-44b7-91e4-2bf399bdb536.png)
+![Simulator Screen Shot - iPhone 13 Pro Max - 2022-08-26 at 16 08 25](https://user-images.githubusercontent.com/96865411/186843965-d69a84c6-b77d-4d5c-8583-4f783b4ff38f.png)
+![Simulator Screen Shot - iPhone 13 Pro Max - 2022-08-26 at 16 08 14](https://user-images.githubusercontent.com/96865411/186843996-70d491ab-7984-45e1-a1df-62ec7d8db080.png)
+
+
