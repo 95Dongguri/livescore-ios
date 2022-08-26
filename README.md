@@ -1,7 +1,11 @@
 # LiveScore
 
 ## 프로젝트 설명
+<<<<<<< HEAD
 - 달력에서 검색 날짜 선택 후 해당 날짜 경기 표시
+=======
+- 달력에서 검색 날짜 선택 후 해당 날짜 경기 표시 (피드백 받은 부분)
+>>>>>>> 358fc3b9a17df6c18ba0cc21d578736b8a8be1f8
 - 홈 팀 빨간색 글씨로 표기, 경기 진행 상태 표시, 승리 팀 스코어 빨간색 글씨로 표기
 - 메이저 리그 지원
 - 한국어 지원 X
@@ -30,4 +34,8 @@
 4. ...
 
 ### 화면 구성
+<<<<<<< HEAD
 
+=======
+![Simulator Screen Recording - iPhone 13 Pro Max - 2022-08-26 at 16 16 46-2](https://user-images.githubusercontent.com/96865411/186845778-71fa9bf0-a496-4093-8429-5ee76ee429ea.gif)
+>>>>>>> 358fc3b9a17df6c18ba0cc21d578736b8a8be1f8
