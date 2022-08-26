@@ -219,8 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				CE288D442838C432002A39A3 /* TabBarViewController.swift */,
-				CE26C09A287D178C004FDC5D /* MatchDetail */,
 				CE288D332838AFE3002A39A3 /* Live */,
+				CE26C09A287D178C004FDC5D /* MatchDetail */,
 				CE288D432838C333002A39A3 /* Scorers */,
 				CE288D322838AFD9002A39A3 /* Header & Cell */,
 			);

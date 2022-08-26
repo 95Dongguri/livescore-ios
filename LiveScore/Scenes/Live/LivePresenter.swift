@@ -9,10 +9,12 @@ import UIKit
 import Toast
 
 protocol LiveProtocol: AnyObject {
-    func setupNavigationTitle()
+    func setupNavigation()
     func setupViews()
+    func searchDate() -> String
     func reloadCollectionView()
     func makeToast()
+    func toggleItem()
     func pushLiveDetail(with result: Result)
 }
 
@@ -20,8 +22,6 @@ class LivePresenter: NSObject {
     
     private weak var vc: LiveProtocol?
     private let liveScoreSearchManager: LiveScoreSearchManagerProtocol
-
-    private var dateFrom = ""
     
     private var resultList: [Result] = []
     
@@ -31,8 +31,28 @@ class LivePresenter: NSObject {
     }
     
     func viewDidLoad() {
-        vc?.setupNavigationTitle()
+        vc?.setupNavigation()
         vc?.setupViews()
+    }
+    
+    func toggleItem() {
+        vc?.toggleItem()
+    }
+    
+    func searchDate() {
+        guard let selectedDate = vc?.searchDate() else { return }
+        
+        resultList = []
+        vc?.reloadCollectionView()
+        
+        liveScoreSearchManager.request(from: selectedDate) { [weak self] newValue in
+            if newValue.isEmpty {
+                self?.vc?.makeToast()
+            }
+            
+            self?.resultList = newValue
+            self?.vc?.reloadCollectionView()
+        }
     }
 }
 
@@ -59,22 +79,22 @@ extension LivePresenter: UICollectionViewDelegate {
     }
 }
 
-extension LivePresenter: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        resultList = []
-        vc?.reloadCollectionView()
-        
-        guard let searchDate = searchBar.text?
-            .replacingOccurrences(of: "/", with: "-")
-            .replacingOccurrences(of: ".", with: "-") else { return }
-        
-        liveScoreSearchManager.request(from: searchDate) { [weak self] newValue in
-            if newValue.isEmpty {
-                self?.vc?.makeToast()
-            }
-            
-            self?.resultList = newValue
-            self?.vc?.reloadCollectionView()
-        }
-    }
-}
+//extension LivePresenter: UISearchBarDelegate {
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        resultList = []
+//        vc?.reloadCollectionView()
+//        
+//        guard let searchDate = searchBar.text?
+//            .replacingOccurrences(of: "/", with: "-")
+//            .replacingOccurrences(of: ".", with: "-") else { return }
+//        
+//        liveScoreSearchManager.request(from: search) { [weak self] newValue in
+//            if newValue.isEmpty {
+//                self?.vc?.makeToast()
+//            }
+//            
+//            self?.resultList = newValue
+//            self?.vc?.reloadCollectionView()
+//        }
+//    }
+//}

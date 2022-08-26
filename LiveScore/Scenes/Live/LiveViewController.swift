@@ -15,6 +15,16 @@ class LiveViewController: UIViewController {
     
     private let inset: CGFloat = 16.0
     
+    private lazy var calendar: UIDatePicker = {
+        let calendar = UIDatePicker()
+        calendar.preferredDatePickerStyle = .inline
+        calendar.datePickerMode = .date
+        
+        calendar.addTarget(self, action: #selector(getDate), for: .valueChanged)
+        
+        return calendar
+    }()
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = CGSize(width: view.frame.width - (inset * 2), height: 80.0)
@@ -24,6 +34,7 @@ class LiveViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .secondarySystemBackground
         collectionView.register(LiveListCollectionViewCell.self, forCellWithReuseIdentifier: LiveListCollectionViewCell.identifier)
+        collectionView.isHidden = true
         
         collectionView.dataSource = presenter
         collectionView.delegate = presenter
@@ -39,23 +50,44 @@ class LiveViewController: UIViewController {
 }
 
 extension LiveViewController: LiveProtocol {
-    func setupNavigationTitle() {
+    func setupNavigation() {
         navigationItem.title = "TODAY'S MATCH!!!"
+        
+        let calendar = UIBarButtonItem(image: UIImage(systemName: "calendar"), style: .plain, target: self, action: #selector(tapCalendarButton))
+        
+        navigationItem.rightBarButtonItem = calendar
+        navigationItem.rightBarButtonItem?.tintColor = .label
     }
     
     func setupViews() {
-        let searchController = UISearchController()
-        searchController.searchBar.placeholder = "날짜를 입력해주세요."
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.delegate = presenter
+        [
+            calendar,
+            collectionView
+        ].forEach {
+            view.addSubview($0)
+        }
         
-        navigationItem.searchController = searchController
-        
-        view.addSubview(collectionView)
+        calendar.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+        }
         
         collectionView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
+    }
+    
+    func searchDate() -> String {
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.timeZone = TimeZone(abbreviation: "KST")
+        
+        let selectedDate = dateFormatter.string(from: calendar.date)
+        
+        presenter.toggleItem()
+        
+        return selectedDate
     }
     
     func reloadCollectionView() {
@@ -73,5 +105,18 @@ extension LiveViewController: LiveProtocol {
     
     func makeToast() {
         view.makeToast("😭 경기 일정이 없습니다.")
+    }
+    
+    func toggleItem() {
+        collectionView.isHidden.toggle()
+        calendar.isHidden.toggle()
+    }
+    
+    @objc func getDate() {
+        presenter.searchDate()
+    }
+    
+    @objc func tapCalendarButton() {
+        presenter.toggleItem()
     }
 }

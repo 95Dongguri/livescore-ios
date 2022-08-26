@@ -20,5 +20,83 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2448E6C5-8CC6-4896-9A4D-5B10168E59B7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LiveScore/Scenes/Live/LivePresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "LivePresenter"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "2448E6C5-8CC6-4896-9A4D-5B10168E59B7 - aef8290290f8ed5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LiveScore.LivePresenter.resultList.getter : Swift.Array&lt;LiveScore.Result&gt;"
+                  moduleName = "LiveScore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/DongHyeok/Desktop/LiveScore/LiveScore/Scenes/Live/LivePresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "2448E6C5-8CC6-4896-9A4D-5B10168E59B7 - 71f8bb7fc54a1969"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LiveScore.LivePresenter.resultList.setter : Swift.Array&lt;LiveScore.Result&gt;"
+                  moduleName = "LiveScore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/DongHyeok/Desktop/LiveScore/LiveScore/Scenes/Live/LivePresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "2448E6C5-8CC6-4896-9A4D-5B10168E59B7 - 1311cc8f8a95058"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LiveScore.LivePresenter.resultList.modify : Swift.Array&lt;LiveScore.Result&gt;"
+                  moduleName = "LiveScore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/DongHyeok/Desktop/LiveScore/LiveScore/Scenes/Live/LivePresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "2448E6C5-8CC6-4896-9A4D-5B10168E59B7 - 17be5af8a00f954c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LiveScore.LivePresenter.resultList.modify : Swift.Array&lt;LiveScore.Result&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "LiveScore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/DongHyeok/Desktop/LiveScore/LiveScore/Scenes/Live/LivePresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
