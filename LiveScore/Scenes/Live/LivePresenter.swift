@@ -78,23 +78,3 @@ extension LivePresenter: UICollectionViewDelegate {
         vc?.pushLiveDetail(with: result)
     }
 }
-
-//extension LivePresenter: UISearchBarDelegate {
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        resultList = []
-//        vc?.reloadCollectionView()
-//        
-//        guard let searchDate = searchBar.text?
-//            .replacingOccurrences(of: "/", with: "-")
-//            .replacingOccurrences(of: ".", with: "-") else { return }
-//        
-//        liveScoreSearchManager.request(from: search) { [weak self] newValue in
-//            if newValue.isEmpty {
-//                self?.vc?.makeToast()
-//            }
-//            
-//            self?.resultList = newValue
-//            self?.vc?.reloadCollectionView()
-//        }
-//    }
-//}
