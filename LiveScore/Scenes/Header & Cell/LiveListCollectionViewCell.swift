@@ -81,7 +81,16 @@ class LiveListCollectionViewCell: UICollectionViewCell {
         
         logoView.frame = rect
         
-        statusLabel.text = result.status
+        let status = result.status
+
+        if status == "FINISHED" {
+            statusLabel.text = status
+            statusLabel.textColor = .systemRed
+        } else {
+            statusLabel.text = status
+            statusLabel.textColor = .label
+        }
+        
         homeNameLabel.text = result.homeTeam.name
         awayNameLabel.text = result.awayTeam.name
         

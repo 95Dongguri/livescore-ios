@@ -33,8 +33,8 @@ class LiveViewController: UIViewController {
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .secondarySystemBackground
-        collectionView.register(LiveListCollectionViewCell.self, forCellWithReuseIdentifier: LiveListCollectionViewCell.identifier)
         collectionView.isHidden = true
+        collectionView.register(LiveListCollectionViewCell.self, forCellWithReuseIdentifier: LiveListCollectionViewCell.identifier)
         
         collectionView.dataSource = presenter
         collectionView.delegate = presenter
@@ -46,12 +46,13 @@ class LiveViewController: UIViewController {
         super.viewDidLoad()
         
         presenter.viewDidLoad()
+        presenter.searchDate()
     }
 }
 
 extension LiveViewController: LiveProtocol {
     func setupNavigation() {
-        navigationItem.title = "TODAY'S MATCH!!!"
+        navigationItem.title = "DAILY MATCH!!!"
         
         let calendar = UIBarButtonItem(image: UIImage(systemName: "calendar"), style: .plain, target: self, action: #selector(tapCalendarButton))
         
