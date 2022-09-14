@@ -32,4 +32,4 @@
 4. ...
 
 ### 화면 구성
-<img width="50%" src="https://user-images.githubusercontent.com/96865411/190109108-38268c74-6d96-4100-bca8-c718cdf2183a.gif"/>
+<img width="30%" src="https://user-images.githubusercontent.com/96865411/190109108-38268c74-6d96-4100-bca8-c718cdf2183a.gif"/>
