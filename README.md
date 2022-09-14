@@ -32,4 +32,4 @@
 4. ...
 
 ### 화면 구성
-![Simulator Screen Recording - iPhone 13 Pro Max - 2022-08-26 at 16 16 46-2](https://user-images.githubusercontent.com/96865411/186845778-71fa9bf0-a496-4093-8429-5ee76ee429ea.gif)
+<img width="50%" src="https://user-images.githubusercontent.com/96865411/190107974-d7b406c5-3dc2-452a-8747-83cdb2578bd9.mp4"/>
