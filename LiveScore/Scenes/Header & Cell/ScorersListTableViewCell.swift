@@ -1,17 +1,17 @@
 //
-//  ScorersListCollectionViewCell.swift
+//  ScorersListTableViewCell.swift
 //  LiveScore
 //
-//  Created by 김동혁 on 2022/05/21.
+//  Created by 김동혁 on 2022/09/14.
 //
 
 import SDWebImageSVGCoder
 import SnapKit
 import UIKit
 
-class ScorersListCollectionViewCell: UICollectionViewCell {
+class ScorersListTableViewCell: UITableViewCell {
     
-    static let identifier = "ScorersListCollectionViewCell"
+    static let identifier = "ScorersListTableViewCell"
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
@@ -84,13 +84,13 @@ class ScorersListCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    func setup(scores: Scorers) {
+    func setup(scorers: Scorers) {
         setupLayout()
         
         let SVGCoder = SDImageSVGCoder.shared
         SDImageCodersManager.shared.addCoder(SVGCoder)
         
-        guard let url = URL(string: scores.team.crest ?? "") else { return }
+        guard let url = URL(string: scorers.team.crest ?? "") else { return }
         
         logoView.sd_setImage(with: url)
         
@@ -101,23 +101,23 @@ class ScorersListCollectionViewCell: UICollectionViewCell {
         
         logoView.frame = rect
         
-        nameLabel.text = scores.player.name
-        birthLabel.text = scores.player.dateOfBirth
-        nationLabel.text = "Nation: \(scores.player.nationality)"
-        positionLabel.text = "Position: \(scores.player.position)"
+        nameLabel.text = scorers.player.name
+        birthLabel.text = scorers.player.dateOfBirth
+        nationLabel.text = "Nation: \(scorers.player.nationality)"
+        positionLabel.text = "Position: \(scorers.player.position)"
         
-        teamNameLabel.text = scores.team.name
+        teamNameLabel.text = scorers.team.name
         
-        goalLabel.text = "Goals: \(scores.goals ?? 0)"
-        assistsLabel.text = "Assists: \(scores.assists ?? 0)"
-        penaltiesLabel.text = "Penalties: \(scores.penalties ?? 0)"
+        goalLabel.text = "Goals: \(scorers.goals ?? 0)"
+        assistsLabel.text = "Assists: \(scorers.assists ?? 0)"
+        penaltiesLabel.text = "Penalties: \(scorers.penalties ?? 0)"
     }
 }
 
-extension ScorersListCollectionViewCell {
+extension ScorersListTableViewCell {
     func setupLayout() {
         backgroundColor = .systemBackground
-        layer.cornerRadius = 12.0
+        selectionStyle = .none
         
         [
             logoView,

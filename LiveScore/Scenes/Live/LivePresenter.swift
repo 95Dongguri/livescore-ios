@@ -65,6 +65,7 @@ extension LivePresenter: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LiveListCollectionViewCell.identifier, for: indexPath) as? LiveListCollectionViewCell else { return UICollectionViewCell() }
         
         let result = resultList[indexPath.row]
+        
         cell.setup(result: result)
         
         return cell

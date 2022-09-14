@@ -8,12 +8,10 @@
 import SDWebImageSVGCoder
 import SnapKit
 import UIKit
-import WebKit
-
 
 class LiveListCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "ScoreListCollectionViewCell"
+    static let identifier = "LiveListCollectionViewCell"
     
     private lazy var logoView: UIImageView = {
         let imageView = UIImageView()

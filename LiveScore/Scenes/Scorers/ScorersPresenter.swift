@@ -10,9 +10,7 @@ import UIKit
 protocol ScorersProtocol: AnyObject {
     func setupNavigationTitle()
     func setupLayout()
-    func reloadCollectionView()
-    func isHidden(isHidden: Bool)
-    func endRefreshing()
+    func reloadData()
 }
 
 class ScorersPresenter: NSObject {
@@ -35,29 +33,23 @@ class ScorersPresenter: NSObject {
         vc?.setupNavigationTitle()
         vc?.setupLayout()
     }
-    
-    func didCalledRefresh() {
-        vc?.isHidden(isHidden: false)
-        vc?.endRefreshing()
-    }
-}
-
-extension ScorersPresenter: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return scorerList.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ScorersListCollectionViewCell.identifier, for: indexPath) as? ScorersListCollectionViewCell else { return UICollectionViewCell() }
-        
-        let scores = scorerList[indexPath.row]
-        cell.setup(scores: scores)
-        
-        return cell
-    }
 }
 
 extension ScorersPresenter: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return scorerList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ScorersListTableViewCell.identifier, for: indexPath) as? ScorersListTableViewCell else { return UITableViewCell() }
+        
+        let scorers = scorerList[indexPath.row]
+        
+        cell.setup(scorers: scorers)
+
+        return cell
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: ScorersListTableViewHeaderView.identifier) as? ScorersListTableViewHeaderView else { return UITableViewHeaderFooterView() }
         
@@ -65,31 +57,26 @@ extension ScorersPresenter: UITableViewDataSource {
         
         return header
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-
-        return cell
-    }
 }
 
 extension ScorersPresenter: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(indexPath) select")
+    }
 }
 
 extension ScorersPresenter: ScorersListTableViewHeaderViewDelegate {
     func didSelectTag(_ selectedIndex: Int) {
         league = tags[selectedIndex]
-        scorerList = []
-        
+        requestScorersList()
+    }
+}
+
+private extension ScorersPresenter {
+    func requestScorersList() {
         scorersSearchManager.request(from: league) { [weak self] newValue in
-            self?.scorerList += newValue
-            self?.vc?.reloadCollectionView()
-            self?.vc?.isHidden(isHidden: true)
+            self?.scorerList = newValue
+            self?.vc?.reloadData()
         }
     }
 }

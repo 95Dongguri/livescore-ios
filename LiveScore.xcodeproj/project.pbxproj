@@ -19,7 +19,6 @@
 		CE15B4472834FE6A0003CC47 /* LivePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B4462834FE6A0003CC47 /* LivePresenter.swift */; };
 		CE15B44A2834FE7F0003CC47 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE15B4492834FE7F0003CC47 /* SnapKit */; };
 		CE15B44D2834FE8A0003CC47 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE15B44C2834FE8A0003CC47 /* Alamofire */; };
-		CE1E79882838CFED0041B7A7 /* ScorersListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E79872838CFED0041B7A7 /* ScorersListCollectionViewCell.swift */; };
 		CE26C09C287D17AE004FDC5D /* LiveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26C09B287D17AE004FDC5D /* LiveDetailViewController.swift */; };
 		CE26C09E287D17B6004FDC5D /* LiveDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26C09D287D17B6004FDC5D /* LiveDetailPresenter.swift */; };
 		CE288D3128389111002A39A3 /* LiveRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D3028389111002A39A3 /* LiveRequestModel.swift */; };
@@ -30,6 +29,7 @@
 		CE288D452838C432002A39A3 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D442838C432002A39A3 /* TabBarViewController.swift */; };
 		CE288D472838C487002A39A3 /* ScorersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D462838C487002A39A3 /* ScorersPresenter.swift */; };
 		CE288D492838C80D002A39A3 /* ScorersListTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE288D482838C80D002A39A3 /* ScorersListTableViewHeaderView.swift */; };
+		CE2CDA5B28D1AE3A00539307 /* ScorersListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2CDA5A28D1AE3A00539307 /* ScorersListTableViewCell.swift */; };
 		CE2D8296283CD98E00F7AD24 /* LivePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D8295283CD98E00F7AD24 /* LivePresenterTests.swift */; };
 		CE2D8299283CDDD100F7AD24 /* MockLiveScoreSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D8298283CDDD100F7AD24 /* MockLiveScoreSearchManager.swift */; };
 		CE2D829B283CDDFD00F7AD24 /* MockLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D829A283CDDFD00F7AD24 /* MockLiveViewController.swift */; };
@@ -78,7 +78,6 @@
 		CE15B4372834FDB70003CC47 /* LiveScoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreUITests.swift; sourceTree = "<group>"; };
 		CE15B4392834FDB70003CC47 /* LiveScoreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE15B4462834FE6A0003CC47 /* LivePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePresenter.swift; sourceTree = "<group>"; };
-		CE1E79872838CFED0041B7A7 /* ScorersListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorersListCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE26C09B287D17AE004FDC5D /* LiveDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveDetailViewController.swift; sourceTree = "<group>"; };
 		CE26C09D287D17B6004FDC5D /* LiveDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveDetailPresenter.swift; sourceTree = "<group>"; };
 		CE288D3028389111002A39A3 /* LiveRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRequestModel.swift; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		CE288D442838C432002A39A3 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CE288D462838C487002A39A3 /* ScorersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorersPresenter.swift; sourceTree = "<group>"; };
 		CE288D482838C80D002A39A3 /* ScorersListTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorersListTableViewHeaderView.swift; sourceTree = "<group>"; };
+		CE2CDA5A28D1AE3A00539307 /* ScorersListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorersListTableViewCell.swift; sourceTree = "<group>"; };
 		CE2D8295283CD98E00F7AD24 /* LivePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePresenterTests.swift; sourceTree = "<group>"; };
 		CE2D8298283CDDD100F7AD24 /* MockLiveScoreSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLiveScoreSearchManager.swift; sourceTree = "<group>"; };
 		CE2D829A283CDDFD00F7AD24 /* MockLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLiveViewController.swift; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				CE2F921D28377CC2007531ED /* LiveListCollectionViewCell.swift */,
-				CE1E79872838CFED0041B7A7 /* ScorersListCollectionViewCell.swift */,
+				CE2CDA5A28D1AE3A00539307 /* ScorersListTableViewCell.swift */,
 				CE288D482838C80D002A39A3 /* ScorersListTableViewHeaderView.swift */,
 			);
 			path = "Header & Cell";
@@ -574,7 +574,7 @@
 				CED880C6283653180065600E /* LiveScoreSearchManager.swift in Sources */,
 				CE2F921E28377CC2007531ED /* LiveListCollectionViewCell.swift in Sources */,
 				CE26C09C287D17AE004FDC5D /* LiveDetailViewController.swift in Sources */,
-				CE1E79882838CFED0041B7A7 /* ScorersListCollectionViewCell.swift in Sources */,
+				CE2CDA5B28D1AE3A00539307 /* ScorersListTableViewCell.swift in Sources */,
 				CE288D362838B248002A39A3 /* ScoreResponseModel.swift in Sources */,
 				CE26C09E287D17B6004FDC5D /* LiveDetailPresenter.swift in Sources */,
 				CE15B41B2834FDB60003CC47 /* LiveViewController.swift in Sources */,

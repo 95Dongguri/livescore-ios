@@ -19,6 +19,8 @@ class LiveViewController: UIViewController {
         let calendar = UIDatePicker()
         calendar.preferredDatePickerStyle = .inline
         calendar.datePickerMode = .date
+        calendar.locale = Locale(identifier: "ko_KR")
+        calendar.timeZone = TimeZone(abbreviation: "KST")
         
         calendar.addTarget(self, action: #selector(getDate), for: .valueChanged)
         

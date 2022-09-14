@@ -12,42 +12,18 @@ class ScorersViewController: UIViewController {
 
     private lazy var presenter = ScorersPresenter(vc: self)
     
-    private let inset: CGFloat = 16.0
-    
-    private lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(didCalledRefresh), for: .valueChanged)
-        
-        return refreshControl
-    }()
-    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.rowHeight = 120.0
+        tableView.separatorInset.left = 0.0
 
         tableView.dataSource = presenter
         tableView.delegate = presenter
 
+        tableView.register(ScorersListTableViewCell.self, forCellReuseIdentifier: ScorersListTableViewCell.identifier)
         tableView.register(ScorersListTableViewHeaderView.self, forHeaderFooterViewReuseIdentifier: ScorersListTableViewHeaderView.identifier)
-        
+                
         return tableView
-    }()
-    
-    private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = CGSize(width: view.frame.width - (inset * 2), height: 120.0)
-        layout.sectionInset = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
-        layout.minimumLineSpacing = inset
-        
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .secondarySystemBackground
-        collectionView.isHidden = true
-        collectionView.register(ScorersListCollectionViewCell.self, forCellWithReuseIdentifier: ScorersListCollectionViewCell.identifier)
-        
-        collectionView.dataSource = presenter
-        
-        collectionView.refreshControl = refreshControl
-        
-        return collectionView
     }()
     
     override func viewDidLoad() {
@@ -63,39 +39,14 @@ extension ScorersViewController: ScorersProtocol {
     }
     
     func setupLayout() {
-        [
-            tableView,
-            collectionView
-        ].forEach {
-            view.addSubview($0)
-        }
+        view.addSubview(tableView)
         
         tableView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
-        
-        collectionView.snp.makeConstraints {
-            $0.edges.equalTo(view.safeAreaLayoutGuide)
-        }
     }
     
-    func reloadCollectionView() {
-        collectionView.reloadData()
-    }
-    
-    func endRefreshing() {
-        refreshControl.endRefreshing()
-    }
-    
-    func isHidden(isHidden: Bool) {
-        tableView.isHidden = isHidden
-        collectionView.isHidden = !isHidden
-    }
-}
-
-private extension ScorersViewController {
-    @objc func didCalledRefresh() {
-        presenter.didCalledRefresh()
-        isHidden(isHidden: false)
+    func reloadData() {
+        tableView.reloadData()
     }
 }

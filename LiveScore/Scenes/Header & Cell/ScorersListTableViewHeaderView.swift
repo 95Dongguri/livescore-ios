@@ -58,6 +58,8 @@ private extension ScorersListTableViewHeaderView {
         tagCollectionView.showsHorizontalScrollIndicator = false
         tagCollectionView.selectionLimit = 1
         
+        tagCollectionView.removeAllTags()
+                
         let inset: CGFloat = 16.0
         
         tagCollectionView.contentInset = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
