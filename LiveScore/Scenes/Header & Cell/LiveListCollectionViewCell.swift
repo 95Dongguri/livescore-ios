@@ -70,7 +70,9 @@ class LiveListCollectionViewCell: UICollectionViewCell {
         
         guard let url = URL(string: result.competition.emblem ?? "") else { return }
         
-        logoView.sd_setImage(with: url)
+        DispatchQueue.global().async {
+            self.logoView.sd_setImage(with: url)
+        }
         
         var rect = logoView.frame
         

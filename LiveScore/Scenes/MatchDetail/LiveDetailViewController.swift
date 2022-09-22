@@ -169,8 +169,10 @@ extension LiveDetailViewController: LiveDetailProtocol {
         guard let homeUrl = URL(string: result.homeTeam.crest ?? "") else { return }
         guard let awayUrl = URL(string: result.awayTeam.crest ?? "") else { return }
         
-        homeImageView.sd_setImage(with: homeUrl)
-        awayImageView.sd_setImage(with: awayUrl)
+        DispatchQueue.global().async {
+            self.homeImageView.sd_setImage(with: homeUrl)
+            self.awayImageView.sd_setImage(with: awayUrl)
+        }
         
         homeNameLabel.text = result.homeTeam.name
         awayNameLabel.text = result.awayTeam.name

@@ -10,6 +10,7 @@ import UIKit
 protocol ScorersProtocol: AnyObject {
     func setupNavigationTitle()
     func setupLayout()
+    func makeToast()
     func reloadData()
 }
 
@@ -74,7 +75,14 @@ extension ScorersPresenter: ScorersListTableViewHeaderViewDelegate {
 
 private extension ScorersPresenter {
     func requestScorersList() {
+        scorerList = []
+        vc?.reloadData()
+        
         scorersSearchManager.request(from: league) { [weak self] newValue in
+            if newValue.isEmpty {
+                self?.vc?.makeToast()
+            }
+            
             self?.scorerList = newValue
             self?.vc?.reloadData()
         }

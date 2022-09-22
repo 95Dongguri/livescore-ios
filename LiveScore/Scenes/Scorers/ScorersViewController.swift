@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Toast
 
 class ScorersViewController: UIViewController {
 
@@ -44,6 +45,10 @@ extension ScorersViewController: ScorersProtocol {
         tableView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
+    }
+    
+    func makeToast() {
+        view.makeToast("😭 득점 순위가 없습니다.")
     }
     
     func reloadData() {

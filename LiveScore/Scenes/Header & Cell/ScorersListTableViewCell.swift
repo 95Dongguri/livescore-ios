@@ -92,7 +92,9 @@ class ScorersListTableViewCell: UITableViewCell {
         
         guard let url = URL(string: scorers.team.crest ?? "") else { return }
         
-        logoView.sd_setImage(with: url)
+        DispatchQueue.global().async {
+            self.logoView.sd_setImage(with: url)
+        }
         
         var rect = logoView.frame
         
@@ -105,6 +107,12 @@ class ScorersListTableViewCell: UITableViewCell {
         birthLabel.text = scorers.player.dateOfBirth
         nationLabel.text = "Nation: \(scorers.player.nationality)"
         positionLabel.text = "Position: \(scorers.player.position)"
+        
+        if scorers.team.name.count > 22 {
+            teamNameLabel.font = .systemFont(ofSize: 6.0, weight: .bold)
+        } else {
+            teamNameLabel.font = .systemFont(ofSize: 8.0, weight: .bold)
+        }
         
         teamNameLabel.text = scorers.team.name
         
@@ -160,7 +168,8 @@ extension ScorersListTableViewCell {
         
         teamNameLabel.snp.makeConstraints {
             $0.centerX.equalTo(logoView)
-            $0.top.equalTo(logoView.snp.bottom).offset(5.0)
+            $0.centerY.equalTo(goalLabel.snp.centerY)
+            $0.top.equalTo(logoView.snp.bottom).offset(8.0)
         }
         
         goalLabel.snp.makeConstraints {
